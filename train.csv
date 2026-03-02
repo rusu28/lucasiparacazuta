@@ -1,0 +1,1501 @@
+SampleID,Problem,Solution
+0,Solve for x: x*x = (4),x = -2 or x = 2
+1,Solve for x: (5)*x + (17) = (10),x = -7/5
+2,(-25) + (-24) + (-23) + (19),The result of (-25) + (-24) + (-23) + (19) is -53.
+3,(4) + (-5) + (-1),The result of (4) + (-5) + (-1) is -2.
+4,Solve for x: (7)*x + (20) = (46),x = 26/7
+5,Solve for x: x*x = (4),x = -2 or x = 2
+6,Solve for x: (2)*x + (-1) = (100),x = 101/2
+7,Solve for x: (2)*x + (17) = (72),x = 55/2
+8,Solve for x: x + (6) = (-3),x = -9
+9,Solve for x: x + (12) = (-7),x = -19
+10,(26) + (-4) + (11) + (16) + (-14),The result of (26) + (-4) + (11) + (16) + (-14) is 35.
+11,Solve for x: x + (16) = (-1),x = -17
+12,Solve for x: (7)*x + (-15) = (53),x = 68/7
+13,Solve for x: x*x = (49),x = -7 or x = 7
+14,Solve for x: x*x = (36),x = -6 or x = 6
+15,Solve for x: x*x = (36),x = -6 or x = 6
+16,(31) / (29),The result of (31) / (29) is 1.0689655172413792.
+17,(3) + (20) + (23) + (22),The result of (3) + (20) + (23) + (22) is 68.
+18,Solve for x: (5)*x + (-9) = (77),x = 86/5
+19,(0) + (4) + (7),The result of (0) + (4) + (7) is 11.
+20,Solve for x: x + (17) = (-7),x = -24
+21,(20) * (-32),The result of (20) * (-32) is -640.
+22,Solve for x: (2)*x + (-5) = (11),x = 8
+23,Solve for x: (3)*x + (4) = (44),x = 40/3
+24,(-10) + (2) + (-6) + (-16) + (6),The result of (-10) + (2) + (-6) + (-16) + (6) is -24.
+25,(8) + (-30) + (-22),The result of (8) + (-30) + (-22) is -44.
+26,Solve for x: x*x = (1),x = -1 or x = 1
+27,Solve for x: (6)*x + (11) = (71),x = 10
+28,(2) + (-12) + (0) + (-17) + (-25),The result of (2) + (-12) + (0) + (-17) + (-25) is -52.
+29,(-26) + (-28) + (-28) + (-29),The result of (-26) + (-28) + (-28) + (-29) is -111.
+30,Solve for x: (3)*x + (17) = (-1),x = -6
+31,(-23) + (-2) + (17) + (28),The result of (-23) + (-2) + (17) + (28) is 20.
+32,Solve for x: (1)*x + (17) = (57),x = 40
+33,(1) + (-17),The result of (1) + (-17) is -16.
+34,Solve for x: (6)*x + (8) = (-12),x = -10/3
+35,Solve for x: (3)*x + (-4) = (40),x = 44/3
+36,Solve for x: (7)*x = (42),x = 6
+37,Solve for x: x*x = (16),x = -4 or x = 4
+38,Solve for x: (6)*x = (22),x = 11/3
+39,Solve for x: (8)*x + (-11) = (70),x = 81/8
+40,(7) * (-32),The result of (7) * (-32) is -224.
+41,Solve for x: (5)*x + (10) = (55),x = 9
+42,Solve for x: x + (19) = (-14),x = -33
+43,(50) / (33),The result of (50) / (33) is 1.5151515151515151.
+44,Solve for x: (1)*x + (-10) = (-5),x = 5
+45,(11) / (37),The result of (11) / (37) is 0.2972972972972973.
+46,Solve for x: x + (15) = (19),x = 4
+47,Solve for x: x*x = (1),x = -1 or x = 1
+48,(-15) + (26) + (26) + (12),The result of (-15) + (26) + (26) + (12) is 49.
+49,(-16) + (-5) + (17) + (-20),The result of (-16) + (-5) + (17) + (-20) is -24.
+50,Solve for x: (1)*x + (16) = (19),x = 3
+51,Solve for x: x*x = (36),x = -6 or x = 6
+52,Solve for x: (9)*x + (19) = (93),x = 74/9
+53,Solve for x: x*x = (16),x = -4 or x = 4
+54,Solve for x: (1)*x + (-6) = (84),x = 90
+55,Solve for x: x*x = (36),x = -6 or x = 6
+56,Solve for x: (10)*x + (-4) = (92),x = 48/5
+57,Solve for x: (8)*x + (7) = (90),x = 83/8
+58,Solve for x: x*x = (16),x = -4 or x = 4
+59,(10) + (-28) + (-16),The result of (10) + (-28) + (-16) is -34.
+60,Solve for x: x*x = (36),x = -6 or x = 6
+61,Solve for x: x + (-13) = (-5),x = 8
+62,Solve for x: (12)*x = (39),x = 13/4
+63,Solve for x: x*x = (49),x = -7 or x = 7
+64,Solve for x: x + (7) = (16),x = 9
+65,Solve for x: (8)*x + (-3) = (88),x = 91/8
+66,Solve for x: (4)*x = (-14),x = -7/2
+67,Solve for x: (14)*x = (91),x = 13/2
+68,(-22) + (21) + (13) + (28) + (-22),The result of (-22) + (21) + (13) + (28) + (-22) is 18.
+69,Solve for x: x*x = (64),x = -8 or x = 8
+70,Solve for x: (10)*x + (-7) = (27),x = 17/5
+71,(14) / (42),The result of (14) / (42) is 0.3333333333333333.
+72,Solve for x: (5)*x = (37),x = 37/5
+73,Solve for x: (3)*x + (3) = (4),x = 1/3
+74,(12) + (4),The result of (12) + (4) is 16.
+75,Solve for x: (5)*x + (3) = (38),x = 7
+76,(31) - (2),The result of (31) - (2) is 29.
+77,(3) + (-18) + (9) + (1) + (-3),The result of (3) + (-18) + (9) + (1) + (-3) is -8.
+78,Solve for x: (7)*x = (31),x = 31/7
+79,Solve for x: (10)*x + (19) = (75),x = 28/5
+80,(49) / (11),The result of (49) / (11) is 4.454545454545454.
+81,(9) / (34),The result of (9) / (34) is 0.2647058823529412.
+82,(2) / (24),The result of (2) / (24) is 0.08333333333333333.
+83,Solve for x: x*x = (16),x = -4 or x = 4
+84,Solve for x: (9)*x + (-1) = (9),x = 10/9
+85,(-1) + (12) + (-6),The result of (-1) + (12) + (-6) is 5.
+86,(9) + (15) + (24) + (-14),The result of (9) + (15) + (24) + (-14) is 34.
+87,Solve for x: (15)*x = (-62),x = -62/15
+88,(12) + (-20) + (10) + (-19) + (23),The result of (12) + (-20) + (10) + (-19) + (23) is 6.
+89,(17) * (28),The result of (17) * (28) is 476.
+90,Solve for x: x*x = (81),x = -9 or x = 9
+91,(4) + (25) + (9) + (26) + (-15),The result of (4) + (25) + (9) + (26) + (-15) is 49.
+92,Solve for x: x*x = (1),x = -1 or x = 1
+93,Solve for x: x*x = (36),x = -6 or x = 6
+94,(-17) + (-16) + (-2) + (15),The result of (-17) + (-16) + (-2) + (15) is -20.
+95,Solve for x: (1)*x + (2) = (13),x = 11
+96,(5) + (-10) + (-30) + (-28),The result of (5) + (-10) + (-30) + (-28) is -63.
+97,(7) + (-17),The result of (7) + (-17) is -10.
+98,Solve for x: (1)*x + (-19) = (-10),x = 9
+99,Solve for x: x*x = (36),x = -6 or x = 6
+100,Solve for x: (5)*x = (17),x = 17/5
+101,(9) * (-44),The result of (9) * (-44) is -396.
+102,Solve for x: (9)*x + (2) = (36),x = 34/9
+103,(28) + (-8) + (21) + (-19),The result of (28) + (-8) + (21) + (-19) is 22.
+104,(21) - (-42),The result of (21) - (-42) is 63.
+105,(1) + (29),The result of (1) + (29) is 30.
+106,Solve for x: (3)*x = (19),x = 19/3
+107,(-17) + (25) + (26),The result of (-17) + (25) + (26) is 34.
+108,(16) + (-19) + (29) + (-21),The result of (16) + (-19) + (29) + (-21) is 5.
+109,(9) * (49),The result of (9) * (49) is 441.
+110,Solve for x: x*x = (25),x = -5 or x = 5
+111,Solve for x: x*x = (16),x = -4 or x = 4
+112,Solve for x: x*x = (64),x = -8 or x = 8
+113,Solve for x: x*x = (1),x = -1 or x = 1
+114,(22) * (-47),The result of (22) * (-47) is -1034.
+115,Solve for x: (9)*x + (19) = (-2),x = -7/3
+116,(15) + (-19),The result of (15) + (-19) is -4.
+117,Solve for x: x*x = (1),x = -1 or x = 1
+118,Solve for x: x*x = (25),x = -5 or x = 5
+119,Solve for x: x + (7) = (9),x = 2
+120,(32) - (-36),The result of (32) - (-36) is 68.
+121,(11) / (31),The result of (11) / (31) is 0.3548387096774194.
+122,Solve for x: (9)*x + (-5) = (23),x = 28/9
+123,Solve for x: x*x = (25),x = -5 or x = 5
+124,Solve for x: (1)*x = (-83),x = -83
+125,(5) + (0) + (-14) + (-5) + (-27),The result of (5) + (0) + (-14) + (-5) + (-27) is -41.
+126,(31) / (8),The result of (31) / (8) is 3.875.
+127,(3) / (28),The result of (3) / (28) is 0.10714285714285714.
+128,Solve for x: (9)*x + (-19) = (14),x = 11/3
+129,(-3) + (-22) + (4) + (-26),The result of (-3) + (-22) + (4) + (-26) is -47.
+130,(42) * (46),The result of (42) * (46) is 1932.
+131,(-30) + (-9) + (1) + (11) + (16),The result of (-30) + (-9) + (1) + (11) + (16) is -11.
+132,Solve for x: (10)*x = (-35),x = -7/2
+133,Solve for x: x*x = (4),x = -2 or x = 2
+134,Solve for x: (11)*x = (-2),x = -2/11
+135,Solve for x: (20)*x = (-64),x = -16/5
+136,Solve for x: x*x = (81),x = -9 or x = 9
+137,Solve for x: x*x = (49),x = -7 or x = 7
+138,Solve for x: x*x = (36),x = -6 or x = 6
+139,Solve for x: (8)*x = (-37),x = -37/8
+140,(-19) + (3) + (-4) + (-10) + (-28),The result of (-19) + (3) + (-4) + (-10) + (-28) is -58.
+141,(4) + (20) + (21) + (-18) + (-6),The result of (4) + (20) + (21) + (-18) + (-6) is 21.
+142,Solve for x: x*x = (36),x = -6 or x = 6
+143,Solve for x: x + (-20) = (1),x = 21
+144,(28) / (42),The result of (28) / (42) is 0.6666666666666666.
+145,(-26) + (12) + (-1) + (-6),The result of (-26) + (12) + (-1) + (-6) is -21.
+146,Solve for x: x + (12) = (-18),x = -30
+147,Solve for x: (13)*x = (94),x = 94/13
+148,Solve for x: x*x = (9),x = -3 or x = 3
+149,Solve for x: x*x = (1),x = -1 or x = 1
+150,Solve for x: (7)*x = (76),x = 76/7
+151,Solve for x: (13)*x = (65),x = 5
+152,(-21) + (6) + (21),The result of (-21) + (6) + (21) is 6.
+153,(-18) + (-12) + (-3) + (-12) + (14),The result of (-18) + (-12) + (-3) + (-12) + (14) is -31.
+154,Solve for x: (8)*x + (16) = (34),x = 9/4
+155,(5) * (-21),The result of (5) * (-21) is -105.
+156,(17) + (10) + (-13) + (-11),The result of (17) + (10) + (-13) + (-11) is 3.
+157,Solve for x: x + (-1) = (19),x = 20
+158,Solve for x: (9)*x + (-8) = (28),x = 4
+159,(12) + (-34),The result of (12) + (-34) is -22.
+160,Solve for x: x*x = (4),x = -2 or x = 2
+161,(-22) + (3) + (-1) + (3) + (-23),The result of (-22) + (3) + (-1) + (3) + (-23) is -40.
+162,Solve for x: (17)*x = (84),x = 84/17
+163,(10) + (3) + (27) + (30),The result of (10) + (3) + (27) + (30) is 70.
+164,(-10) + (-2) + (24) + (12) + (-8),The result of (-10) + (-2) + (24) + (12) + (-8) is 16.
+165,(11) + (-4) + (-20) + (12),The result of (11) + (-4) + (-20) + (12) is -1.
+166,Solve for x: x*x = (1),x = -1 or x = 1
+167,Solve for x: (7)*x + (-4) = (96),x = 100/7
+168,Solve for x: (6)*x + (8) = (85),x = 77/6
+169,Solve for x: x*x = (9),x = -3 or x = 3
+170,Solve for x: (9)*x + (19) = (34),x = 5/3
+171,Solve for x: (8)*x + (4) = (8),x = 1/2
+172,(28) / (8),The result of (28) / (8) is 3.5.
+173,(43) * (26),The result of (43) * (26) is 1118.
+174,(13) + (26) + (-10) + (20) + (8),The result of (13) + (26) + (-10) + (20) + (8) is 57.
+175,Solve for x: x + (-9) = (-19),x = -10
+176,(10) + (3) + (-28),The result of (10) + (3) + (-28) is -15.
+177,Solve for x: (1)*x + (-18) = (-16),x = 2
+178,(18) + (8) + (-29) + (-27) + (-30),The result of (18) + (8) + (-29) + (-27) + (-30) is -60.
+179,Solve for x: (8)*x + (-9) = (65),x = 37/4
+180,Solve for x: x*x = (1),x = -1 or x = 1
+181,Solve for x: x*x = (4),x = -2 or x = 2
+182,(13) + (16) + (-6) + (10) + (-22),The result of (13) + (16) + (-6) + (10) + (-22) is 11.
+183,Solve for x: x*x = (25),x = -5 or x = 5
+184,(2) + (16) + (-24) + (8),The result of (2) + (16) + (-24) + (8) is 2.
+185,Solve for x: x*x = (16),x = -4 or x = 4
+186,Solve for x: x*x = (16),x = -4 or x = 4
+187,Solve for x: x*x = (64),x = -8 or x = 8
+188,Solve for x: x*x = (1),x = -1 or x = 1
+189,Solve for x: x + (-5) = (-14),x = -9
+190,Solve for x: (10)*x = (-15),x = -3/2
+191,(10) + (-9) + (-25) + (12) + (-6),The result of (10) + (-9) + (-25) + (12) + (-6) is -18.
+192,(-29) + (-20) + (-29) + (-6) + (28),The result of (-29) + (-20) + (-29) + (-6) + (28) is -56.
+193,Solve for x: x*x = (9),x = -3 or x = 3
+194,Solve for x: x*x = (9),x = -3 or x = 3
+195,Solve for x: x + (-4) = (7),x = 11
+196,(50) - (43),The result of (50) - (43) is 7.
+197,(8) + (-10),The result of (8) + (-10) is -2.
+198,(5) / (37),The result of (5) / (37) is 0.13513513513513514.
+199,(46) * (-34),The result of (46) * (-34) is -1564.
+200,(18) + (-20) + (-24) + (-5),The result of (18) + (-20) + (-24) + (-5) is -31.
+201,(14) + (-8),The result of (14) + (-8) is 6.
+202,(50) - (-11),The result of (50) - (-11) is 61.
+203,Solve for x: (7)*x = (45),x = 45/7
+204,(9) + (-15) + (29) + (15),The result of (9) + (-15) + (29) + (15) is 38.
+205,Solve for x: (3)*x + (-14) = (42),x = 56/3
+206,Solve for x: (7)*x + (0) = (-14),x = -2
+207,Solve for x: (10)*x + (-8) = (42),x = 5
+208,(-6) + (3) + (6),The result of (-6) + (3) + (6) is 3.
+209,Solve for x: (4)*x + (5) = (35),x = 15/2
+210,(44) / (28),The result of (44) / (28) is 1.5714285714285714.
+211,Solve for x: (3)*x = (-8),x = -8/3
+212,(35) + (26),The result of (35) + (26) is 61.
+213,(39) / (27),The result of (39) / (27) is 1.4444444444444444.
+214,Solve for x: x*x = (9),x = -3 or x = 3
+215,Solve for x: (10)*x + (-10) = (19),x = 29/10
+216,Solve for x: (10)*x + (-18) = (14),x = 16/5
+217,Solve for x: (15)*x = (23),x = 23/15
+218,(21) + (-21) + (21) + (-25) + (-19),The result of (21) + (-21) + (21) + (-25) + (-19) is -23.
+219,(5) + (-23) + (-15),The result of (5) + (-23) + (-15) is -33.
+220,Solve for x: x*x = (36),x = -6 or x = 6
+221,Solve for x: (3)*x + (4) = (70),x = 22
+222,Solve for x: x + (-19) = (-19),x = 0
+223,Solve for x: x*x = (9),x = -3 or x = 3
+224,(44) / (49),The result of (44) / (49) is 0.8979591836734694.
+225,Solve for x: (10)*x = (-78),x = -39/5
+226,(-12) + (-22) + (-22) + (-27),The result of (-12) + (-22) + (-22) + (-27) is -83.
+227,Solve for x: (12)*x = (-59),x = -59/12
+228,(9) / (39),The result of (9) / (39) is 0.23076923076923078.
+229,(41) + (-37),The result of (41) + (-37) is 4.
+230,Solve for x: x + (12) = (18),x = 6
+231,(25) + (-34),The result of (25) + (-34) is -9.
+232,(23) + (-13) + (-10) + (-24),The result of (23) + (-13) + (-10) + (-24) is -24.
+233,Solve for x: x*x = (64),x = -8 or x = 8
+234,Solve for x: x*x = (25),x = -5 or x = 5
+235,Solve for x: (14)*x = (-67),x = -67/14
+236,Solve for x: x*x = (49),x = -7 or x = 7
+237,Solve for x: x*x = (4),x = -2 or x = 2
+238,(-13) + (26) + (-14) + (-2) + (28),The result of (-13) + (26) + (-14) + (-2) + (28) is 25.
+239,(24) + (1) + (-4) + (-4),The result of (24) + (1) + (-4) + (-4) is 17.
+240,Solve for x: (18)*x = (-55),x = -55/18
+241,Solve for x: x*x = (64),x = -8 or x = 8
+242,(17) + (0) + (28) + (-25),The result of (17) + (0) + (28) + (-25) is 20.
+243,Solve for x: (4)*x + (13) = (61),x = 12
+244,(11) - (-18),The result of (11) - (-18) is 29.
+245,(-5) + (-6) + (11) + (-18) + (-17),The result of (-5) + (-6) + (11) + (-18) + (-17) is -35.
+246,(18) + (7) + (1),The result of (18) + (7) + (1) is 26.
+247,Solve for x: x + (-2) = (7),x = 9
+248,Solve for x: (4)*x + (18) = (55),x = 37/4
+249,Solve for x: (1)*x = (29),x = 29
+250,Solve for x: x + (-19) = (-13),x = 6
+251,Solve for x: x*x = (1),x = -1 or x = 1
+252,Solve for x: x*x = (9),x = -3 or x = 3
+253,(4) - (-23),The result of (4) - (-23) is 27.
+254,Solve for x: (6)*x + (15) = (-4),x = -19/6
+255,Solve for x: x*x = (36),x = -6 or x = 6
+256,Solve for x: x*x = (36),x = -6 or x = 6
+257,(8) * (47),The result of (8) * (47) is 376.
+258,Solve for x: (6)*x + (-5) = (-17),x = -2
+259,(44) * (36),The result of (44) * (36) is 1584.
+260,(9) + (31),The result of (9) + (31) is 40.
+261,Solve for x: (1)*x + (-7) = (7),x = 14
+262,Solve for x: x + (9) = (-9),x = -18
+263,Solve for x: (6)*x = (-100),x = -50/3
+264,Solve for x: (6)*x + (12) = (0),x = -2
+265,(7) + (-28) + (1) + (9),The result of (7) + (-28) + (1) + (9) is -11.
+266,Solve for x: (1)*x + (16) = (28),x = 12
+267,Solve for x: x*x = (64),x = -8 or x = 8
+268,Solve for x: x*x = (25),x = -5 or x = 5
+269,Solve for x: x*x = (1),x = -1 or x = 1
+270,(-18) + (-1) + (8),The result of (-18) + (-1) + (8) is -11.
+271,(10) / (1),The result of (10) / (1) is 10.0.
+272,(20) * (-42),The result of (20) * (-42) is -840.
+273,(20) + (28) + (28),The result of (20) + (28) + (28) is 76.
+274,Solve for x: x*x = (36),x = -6 or x = 6
+275,Solve for x: x + (-6) = (12),x = 18
+276,(22) + (-22) + (-17) + (6) + (24),The result of (22) + (-22) + (-17) + (6) + (24) is 13.
+277,Solve for x: (3)*x + (11) = (71),x = 20
+278,(-10) + (18) + (28) + (17),The result of (-10) + (18) + (28) + (17) is 53.
+279,(6) / (13),The result of (6) / (13) is 0.46153846153846156.
+280,(15) + (27) + (2) + (8) + (-11),The result of (15) + (27) + (2) + (8) + (-11) is 41.
+281,(40) + (-38),The result of (40) + (-38) is 2.
+282,(13) - (21),The result of (13) - (21) is -8.
+283,Solve for x: x + (-17) = (14),x = 31
+284,Solve for x: (10)*x + (-14) = (88),x = 51/5
+285,Solve for x: (3)*x = (9),x = 3
+286,(-17) + (12) + (26),The result of (-17) + (12) + (26) is 21.
+287,Solve for x: (7)*x + (-12) = (70),x = 82/7
+288,Solve for x: (9)*x + (0) = (90),x = 10
+289,Solve for x: (5)*x = (2),x = 2/5
+290,Solve for x: (10)*x = (-93),x = -93/10
+291,(30) / (48),The result of (30) / (48) is 0.625.
+292,Solve for x: x + (-18) = (-16),x = 2
+293,Solve for x: x*x = (16),x = -4 or x = 4
+294,Solve for x: (12)*x = (30),x = 5/2
+295,Solve for x: (3)*x = (-58),x = -58/3
+296,(24) - (9),The result of (24) - (9) is 15.
+297,(-1) + (18) + (26),The result of (-1) + (18) + (26) is 43.
+298,(43) + (-19),The result of (43) + (-19) is 24.
+299,Solve for x: (1)*x + (-17) = (73),x = 90
+300,(11) + (39),The result of (11) + (39) is 50.
+301,Solve for x: (12)*x = (11),x = 11/12
+302,Solve for x: (4)*x = (-46),x = -23/2
+303,Solve for x: x*x = (1),x = -1 or x = 1
+304,(-20) + (-20) + (10),The result of (-20) + (-20) + (10) is -30.
+305,Solve for x: x*x = (64),x = -8 or x = 8
+306,(16) + (-15) + (-23) + (-5) + (17),The result of (16) + (-15) + (-23) + (-5) + (17) is -10.
+307,Solve for x: x + (12) = (-13),x = -25
+308,(-9) + (25) + (-29),The result of (-9) + (25) + (-29) is -13.
+309,Solve for x: x*x = (16),x = -4 or x = 4
+310,Solve for x: x*x = (49),x = -7 or x = 7
+311,(5) + (-4) + (8) + (-18) + (30),The result of (5) + (-4) + (8) + (-18) + (30) is 21.
+312,Solve for x: (3)*x + (7) = (94),x = 29
+313,(20) / (6),The result of (20) / (6) is 3.3333333333333335.
+314,(-27) + (-14) + (10) + (-13),The result of (-27) + (-14) + (10) + (-13) is -44.
+315,(-28) + (8) + (0),The result of (-28) + (8) + (0) is -20.
+316,Solve for x: x*x = (81),x = -9 or x = 9
+317,(24) + (2) + (-12) + (-15) + (-20),The result of (24) + (2) + (-12) + (-15) + (-20) is -21.
+318,Solve for x: (13)*x = (99),x = 99/13
+319,(-30) + (18) + (3) + (5) + (5),The result of (-30) + (18) + (3) + (5) + (5) is 1.
+320,Solve for x: x + (-10) = (-19),x = -9
+321,(14) + (-2) + (14),The result of (14) + (-2) + (14) is 26.
+322,(42) + (50),The result of (42) + (50) is 92.
+323,Solve for x: x*x = (100),x = -10 or x = 10
+324,Solve for x: x*x = (81),x = -9 or x = 9
+325,Solve for x: x + (5) = (1),x = -4
+326,(3) * (25),The result of (3) * (25) is 75.
+327,Solve for x: (1)*x + (7) = (65),x = 58
+328,(5) + (8) + (10) + (-20),The result of (5) + (8) + (10) + (-20) is 3.
+329,Solve for x: x*x = (49),x = -7 or x = 7
+330,(14) + (-12) + (17) + (21),The result of (14) + (-12) + (17) + (21) is 40.
+331,(38) / (47),The result of (38) / (47) is 0.8085106382978723.
+332,(27) - (-39),The result of (27) - (-39) is 66.
+333,(32) + (-19),The result of (32) + (-19) is 13.
+334,(50) / (25),The result of (50) / (25) is 2.0.
+335,Solve for x: x*x = (25),x = -5 or x = 5
+336,(3) + (17) + (10) + (-6),The result of (3) + (17) + (10) + (-6) is 24.
+337,Solve for x: x*x = (1),x = -1 or x = 1
+338,(37) / (31),The result of (37) / (31) is 1.1935483870967742.
+339,Solve for x: x*x = (64),x = -8 or x = 8
+340,Solve for x: (3)*x + (16) = (55),x = 13
+341,Solve for x: x*x = (36),x = -6 or x = 6
+342,Solve for x: (6)*x + (8) = (75),x = 67/6
+343,(-30) + (0) + (19) + (7),The result of (-30) + (0) + (19) + (7) is -4.
+344,Solve for x: (2)*x = (23),x = 23/2
+345,(14) * (-1),The result of (14) * (-1) is -14.
+346,Solve for x: x*x = (100),x = -10 or x = 10
+347,Solve for x: x + (18) = (-9),x = -27
+348,(0) + (21) + (18) + (17) + (22),The result of (0) + (21) + (18) + (17) + (22) is 78.
+349,(16) / (2),The result of (16) / (2) is 8.0.
+350,Solve for x: (9)*x + (-6) = (-5),x = 1/9
+351,Solve for x: (8)*x + (19) = (64),x = 45/8
+352,Solve for x: x*x = (1),x = -1 or x = 1
+353,Solve for x: x*x = (100),x = -10 or x = 10
+354,(7) * (13),The result of (7) * (13) is 91.
+355,Solve for x: x*x = (1),x = -1 or x = 1
+356,Solve for x: x*x = (36),x = -6 or x = 6
+357,Solve for x: (7)*x + (-9) = (12),x = 3
+358,(17) + (28) + (-5) + (2),The result of (17) + (28) + (-5) + (2) is 42.
+359,Solve for x: (20)*x = (65),x = 13/4
+360,Solve for x: (7)*x + (-17) = (68),x = 85/7
+361,Solve for x: x*x = (25),x = -5 or x = 5
+362,(28) / (12),The result of (28) / (12) is 2.3333333333333335.
+363,(18) / (9),The result of (18) / (9) is 2.0.
+364,(21) + (-30) + (22) + (-11),The result of (21) + (-30) + (22) + (-11) is 2.
+365,(10) + (30),The result of (10) + (30) is 40.
+366,Solve for x: (8)*x = (65),x = 65/8
+367,(38) / (48),The result of (38) / (48) is 0.7916666666666666.
+368,Solve for x: (7)*x = (-40),x = -40/7
+369,Solve for x: (1)*x + (-15) = (64),x = 79
+370,(36) / (1),The result of (36) / (1) is 36.0.
+371,(41) + (40),The result of (41) + (40) is 81.
+372,(14) + (17) + (-24) + (15) + (-16),The result of (14) + (17) + (-24) + (15) + (-16) is 6.
+373,Solve for x: (13)*x = (9),x = 9/13
+374,Solve for x: x*x = (100),x = -10 or x = 10
+375,Solve for x: x*x = (4),x = -2 or x = 2
+376,(28) / (13),The result of (28) / (13) is 2.1538461538461537.
+377,Solve for x: x*x = (4),x = -2 or x = 2
+378,(-8) + (-15) + (-23),The result of (-8) + (-15) + (-23) is -46.
+379,Solve for x: (2)*x = (14),x = 7
+380,(12) * (10),The result of (12) * (10) is 120.
+381,Solve for x: x*x = (1),x = -1 or x = 1
+382,Solve for x: x*x = (25),x = -5 or x = 5
+383,(22) - (29),The result of (22) - (29) is -7.
+384,Solve for x: x + (-19) = (-5),x = 14
+385,Solve for x: x*x = (1),x = -1 or x = 1
+386,Solve for x: (14)*x = (30),x = 15/7
+387,Solve for x: x*x = (16),x = -4 or x = 4
+388,(39) - (48),The result of (39) - (48) is -9.
+389,Solve for x: (10)*x = (94),x = 47/5
+390,(-16) + (-9) + (-19),The result of (-16) + (-9) + (-19) is -44.
+391,Solve for x: (2)*x + (-17) = (26),x = 43/2
+392,(-11) + (-14) + (-18) + (-21) + (30),The result of (-11) + (-14) + (-18) + (-21) + (30) is -34.
+393,(48) * (-15),The result of (48) * (-15) is -720.
+394,(48) + (-18),The result of (48) + (-18) is 30.
+395,Solve for x: x + (20) = (-4),x = -24
+396,(45) * (-45),The result of (45) * (-45) is -2025.
+397,(-16) + (-10) + (25) + (-20),The result of (-16) + (-10) + (25) + (-20) is -21.
+398,Solve for x: (3)*x + (11) = (63),x = 52/3
+399,(8) + (-2) + (12),The result of (8) + (-2) + (12) is 18.
+400,Solve for x: x*x = (4),x = -2 or x = 2
+401,Solve for x: (8)*x + (-20) = (95),x = 115/8
+402,(36) + (42),The result of (36) + (42) is 78.
+403,Solve for x: x + (-12) = (5),x = 17
+404,Solve for x: (1)*x + (19) = (-15),x = -34
+405,(26) + (-12) + (-1) + (29),The result of (26) + (-12) + (-1) + (29) is 42.
+406,Solve for x: (17)*x = (94),x = 94/17
+407,(23) + (-8) + (-24) + (9),The result of (23) + (-8) + (-24) + (9) is 0.
+408,Solve for x: (7)*x + (-5) = (72),x = 11
+409,(-24) + (-30) + (18) + (11) + (30),The result of (-24) + (-30) + (18) + (11) + (30) is 5.
+410,(13) - (41),The result of (13) - (41) is -28.
+411,(-16) + (3) + (-30) + (-9) + (-13),The result of (-16) + (3) + (-30) + (-9) + (-13) is -65.
+412,Solve for x: (3)*x = (-62),x = -62/3
+413,Solve for x: x*x = (16),x = -4 or x = 4
+414,(24) + (-6) + (-17) + (26) + (21),The result of (24) + (-6) + (-17) + (26) + (21) is 48.
+415,Solve for x: x + (19) = (-2),x = -21
+416,(1) + (23) + (29) + (0) + (0),The result of (1) + (23) + (29) + (0) + (0) is 53.
+417,Solve for x: (7)*x + (-11) = (88),x = 99/7
+418,(21) + (-27) + (15),The result of (21) + (-27) + (15) is 9.
+419,Solve for x: x*x = (4),x = -2 or x = 2
+420,(7) + (7) + (-12),The result of (7) + (7) + (-12) is 2.
+421,(5) / (42),The result of (5) / (42) is 0.11904761904761904.
+422,(43) + (-7),The result of (43) + (-7) is 36.
+423,(10) - (0),The result of (10) - (0) is 10.
+424,(-4) + (-22) + (-4),The result of (-4) + (-22) + (-4) is -30.
+425,Solve for x: (5)*x + (2) = (34),x = 32/5
+426,(6) + (50),The result of (6) + (50) is 56.
+427,(39) * (50),The result of (39) * (50) is 1950.
+428,(24) + (19) + (7) + (30) + (-4),The result of (24) + (19) + (7) + (30) + (-4) is 76.
+429,(11) - (-37),The result of (11) - (-37) is 48.
+430,Solve for x: (8)*x + (4) = (41),x = 37/8
+431,(20) * (-12),The result of (20) * (-12) is -240.
+432,(27) - (-8),The result of (27) - (-8) is 35.
+433,Solve for x: (7)*x = (-45),x = -45/7
+434,Solve for x: (9)*x + (-12) = (23),x = 35/9
+435,Solve for x: x*x = (64),x = -8 or x = 8
+436,Solve for x: x*x = (16),x = -4 or x = 4
+437,Solve for x: (8)*x + (6) = (75),x = 69/8
+438,(12) + (20) + (-20),The result of (12) + (20) + (-20) is 12.
+439,Solve for x: x + (-12) = (-6),x = 6
+440,(4) * (15),The result of (4) * (15) is 60.
+441,Solve for x: x + (-6) = (-16),x = -10
+442,Solve for x: (9)*x + (18) = (81),x = 7
+443,Solve for x: x*x = (49),x = -7 or x = 7
+444,Solve for x: (20)*x = (25),x = 5/4
+445,Solve for x: (8)*x = (-4),x = -1/2
+446,(34) * (48),The result of (34) * (48) is 1632.
+447,Solve for x: (4)*x = (61),x = 61/4
+448,Solve for x: (10)*x = (2),x = 1/5
+449,Solve for x: x*x = (25),x = -5 or x = 5
+450,Solve for x: x + (-4) = (17),x = 21
+451,Solve for x: x*x = (9),x = -3 or x = 3
+452,Solve for x: x + (10) = (11),x = 1
+453,Solve for x: (9)*x + (-4) = (99),x = 103/9
+454,Solve for x: x + (-3) = (3),x = 6
+455,Solve for x: (2)*x + (-2) = (24),x = 13
+456,(13) + (-13) + (17) + (-27) + (-25),The result of (13) + (-13) + (17) + (-27) + (-25) is -35.
+457,(29) + (21),The result of (29) + (21) is 50.
+458,Solve for x: (9)*x + (-2) = (53),x = 55/9
+459,(-30) + (-12) + (23),The result of (-30) + (-12) + (23) is -19.
+460,(26) + (-12) + (1) + (-22),The result of (26) + (-12) + (1) + (-22) is -7.
+461,Solve for x: x*x = (49),x = -7 or x = 7
+462,Solve for x: (6)*x + (9) = (76),x = 67/6
+463,Solve for x: (19)*x = (-95),x = -5
+464,Solve for x: x + (-9) = (-5),x = 4
+465,Solve for x: x*x = (64),x = -8 or x = 8
+466,Solve for x: x*x = (81),x = -9 or x = 9
+467,Solve for x: x*x = (64),x = -8 or x = 8
+468,(-28) + (-21) + (-25) + (-26) + (1),The result of (-28) + (-21) + (-25) + (-26) + (1) is -99.
+469,Solve for x: (5)*x + (-4) = (78),x = 82/5
+470,(-14) + (-13) + (-23),The result of (-14) + (-13) + (-23) is -50.
+471,Solve for x: (9)*x + (-15) = (-9),x = 2/3
+472,Solve for x: x + (2) = (7),x = 5
+473,Solve for x: x*x = (1),x = -1 or x = 1
+474,(14) - (16),The result of (14) - (16) is -2.
+475,(38) * (-17),The result of (38) * (-17) is -646.
+476,(4) + (-44),The result of (4) + (-44) is -40.
+477,Solve for x: (4)*x + (-15) = (70),x = 85/4
+478,Solve for x: x*x = (16),x = -4 or x = 4
+479,(-19) + (25) + (13),The result of (-19) + (25) + (13) is 19.
+480,Solve for x: (2)*x + (-7) = (47),x = 27
+481,Solve for x: x + (17) = (20),x = 3
+482,Solve for x: x*x = (81),x = -9 or x = 9
+483,Solve for x: (20)*x = (76),x = 19/5
+484,(18) + (21) + (7) + (22),The result of (18) + (21) + (7) + (22) is 68.
+485,Solve for x: x*x = (9),x = -3 or x = 3
+486,Solve for x: (7)*x = (-56),x = -8
+487,Solve for x: (2)*x = (-90),x = -45
+488,Solve for x: x + (-9) = (18),x = 27
+489,Solve for x: (8)*x = (-9),x = -9/8
+490,(30) + (22) + (-11),The result of (30) + (22) + (-11) is 41.
+491,Solve for x: x*x = (25),x = -5 or x = 5
+492,(-27) + (-16) + (10) + (-17),The result of (-27) + (-16) + (10) + (-17) is -50.
+493,Solve for x: x*x = (4),x = -2 or x = 2
+494,Solve for x: x + (13) = (6),x = -7
+495,(41) - (50),The result of (41) - (50) is -9.
+496,Solve for x: x*x = (16),x = -4 or x = 4
+497,(9) * (2),The result of (9) * (2) is 18.
+498,(13) + (29) + (15),The result of (13) + (29) + (15) is 57.
+499,Solve for x: (6)*x + (-6) = (23),x = 29/6
+500,Solve for x: x*x = (4),x = -2 or x = 2
+501,(21) - (-19),The result of (21) - (-19) is 40.
+502,Solve for x: (7)*x + (-5) = (30),x = 5
+503,(23) * (33),The result of (23) * (33) is 759.
+504,Solve for x: (10)*x + (-5) = (-1),x = 2/5
+505,(33) * (36),The result of (33) * (36) is 1188.
+506,(-11) + (10) + (-17) + (21),The result of (-11) + (10) + (-17) + (21) is 3.
+507,Solve for x: (1)*x + (7) = (5),x = -2
+508,Solve for x: x*x = (4),x = -2 or x = 2
+509,Solve for x: (1)*x + (-4) = (32),x = 36
+510,Solve for x: (3)*x + (19) = (42),x = 23/3
+511,Solve for x: (16)*x = (21),x = 21/16
+512,(-13) + (-5) + (-3) + (-13) + (14),The result of (-13) + (-5) + (-3) + (-13) + (14) is -20.
+513,Solve for x: (19)*x = (-66),x = -66/19
+514,(20) + (22) + (-24) + (-18) + (-17),The result of (20) + (22) + (-24) + (-18) + (-17) is -17.
+515,Solve for x: x + (-18) = (10),x = 28
+516,(49) / (27),The result of (49) / (27) is 1.8148148148148149.
+517,(15) + (-50),The result of (15) + (-50) is -35.
+518,(-21) + (-19) + (-29) + (-4) + (-18),The result of (-21) + (-19) + (-29) + (-4) + (-18) is -91.
+519,Solve for x: (8)*x + (5) = (77),x = 9
+520,Solve for x: (16)*x = (16),x = 1
+521,Solve for x: (10)*x = (22),x = 11/5
+522,Solve for x: (14)*x = (63),x = 9/2
+523,(4) / (40),The result of (4) / (40) is 0.1.
+524,Solve for x: (1)*x + (-15) = (58),x = 73
+525,Solve for x: x*x = (64),x = -8 or x = 8
+526,(18) + (15) + (4),The result of (18) + (15) + (4) is 37.
+527,(11) - (11),The result of (11) - (11) is 0.
+528,(31) + (-28),The result of (31) + (-28) is 3.
+529,(22) + (22) + (9) + (27) + (28),The result of (22) + (22) + (9) + (27) + (28) is 108.
+530,(26) + (1) + (5),The result of (26) + (1) + (5) is 32.
+531,Solve for x: x*x = (36),x = -6 or x = 6
+532,Solve for x: x + (-16) = (-2),x = 14
+533,Solve for x: x*x = (9),x = -3 or x = 3
+534,(32) / (3),The result of (32) / (3) is 10.666666666666666.
+535,Solve for x: x*x = (81),x = -9 or x = 9
+536,Solve for x: x + (16) = (-15),x = -31
+537,(-24) + (29) + (-29) + (-29) + (8),The result of (-24) + (29) + (-29) + (-29) + (8) is -45.
+538,(29) + (-20) + (1),The result of (29) + (-20) + (1) is 10.
+539,Solve for x: (10)*x = (74),x = 37/5
+540,(7) * (36),The result of (7) * (36) is 252.
+541,(31) / (4),The result of (31) / (4) is 7.75.
+542,(37) / (12),The result of (37) / (12) is 3.0833333333333335.
+543,Solve for x: x*x = (25),x = -5 or x = 5
+544,Solve for x: (15)*x = (54),x = 18/5
+545,Solve for x: (7)*x + (-12) = (75),x = 87/7
+546,(15) + (-22),The result of (15) + (-22) is -7.
+547,(7) + (8) + (-13) + (-2) + (-2),The result of (7) + (8) + (-13) + (-2) + (-2) is -2.
+548,(33) - (-49),The result of (33) - (-49) is 82.
+549,Solve for x: (5)*x + (10) = (-12),x = -22/5
+550,(-28) + (-8) + (5) + (-9) + (-5),The result of (-28) + (-8) + (5) + (-9) + (-5) is -45.
+551,Solve for x: x + (5) = (6),x = 1
+552,Solve for x: (9)*x + (7) = (31),x = 8/3
+553,Solve for x: (6)*x + (4) = (-2),x = -1
+554,(17) * (-12),The result of (17) * (-12) is -204.
+555,Solve for x: (1)*x + (8) = (20),x = 12
+556,Solve for x: x*x = (9),x = -3 or x = 3
+557,(48) * (1),The result of (48) * (1) is 48.
+558,Solve for x: (4)*x = (33),x = 33/4
+559,Solve for x: x*x = (49),x = -7 or x = 7
+560,(40) - (-24),The result of (40) - (-24) is 64.
+561,Solve for x: (7)*x + (7) = (96),x = 89/7
+562,Solve for x: (9)*x + (1) = (-15),x = -16/9
+563,(14) - (12),The result of (14) - (12) is 2.
+564,(21) + (-17),The result of (21) + (-17) is 4.
+565,(-30) + (-4) + (-20) + (2) + (7),The result of (-30) + (-4) + (-20) + (2) + (7) is -45.
+566,(24) / (26),The result of (24) / (26) is 0.9230769230769231.
+567,Solve for x: (3)*x + (-19) = (-7),x = 4
+568,Solve for x: (4)*x = (78),x = 39/2
+569,Solve for x: (3)*x + (-16) = (53),x = 23
+570,Solve for x: (19)*x = (89),x = 89/19
+571,(4) + (14) + (-5),The result of (4) + (14) + (-5) is 13.
+572,Solve for x: x*x = (4),x = -2 or x = 2
+573,Solve for x: x + (20) = (18),x = -2
+574,(19) + (-5) + (-23),The result of (19) + (-5) + (-23) is -9.
+575,(43) + (-41),The result of (43) + (-41) is 2.
+576,Solve for x: (1)*x + (19) = (-17),x = -36
+577,(20) * (0),The result of (20) * (0) is 0.
+578,Solve for x: (2)*x = (39),x = 39/2
+579,Solve for x: x + (6) = (12),x = 6
+580,Solve for x: (10)*x + (2) = (36),x = 17/5
+581,(-5) + (-23) + (26),The result of (-5) + (-23) + (26) is -2.
+582,Solve for x: x + (7) = (6),x = -1
+583,Solve for x: x*x = (36),x = -6 or x = 6
+584,(10) + (8) + (6),The result of (10) + (8) + (6) is 24.
+585,Solve for x: (6)*x + (-10) = (97),x = 107/6
+586,(-5) + (17) + (-27) + (4) + (-13),The result of (-5) + (17) + (-27) + (4) + (-13) is -24.
+587,Solve for x: x + (20) = (-12),x = -32
+588,Solve for x: x + (16) = (-2),x = -18
+589,(11) + (0) + (-1) + (9) + (-11),The result of (11) + (0) + (-1) + (9) + (-11) is 8.
+590,Solve for x: x + (-15) = (-10),x = 5
+591,(22) + (16) + (26),The result of (22) + (16) + (26) is 64.
+592,Solve for x: x + (-10) = (0),x = 10
+593,Solve for x: (14)*x = (50),x = 25/7
+594,Solve for x: x*x = (81),x = -9 or x = 9
+595,(28) * (9),The result of (28) * (9) is 252.
+596,(25) + (15) + (19),The result of (25) + (15) + (19) is 59.
+597,Solve for x: x*x = (16),x = -4 or x = 4
+598,Solve for x: x*x = (9),x = -3 or x = 3
+599,Solve for x: (8)*x + (-14) = (73),x = 87/8
+600,Solve for x: x + (7) = (-2),x = -9
+601,Solve for x: (1)*x = (74),x = 74
+602,Solve for x: x*x = (81),x = -9 or x = 9
+603,Solve for x: x + (-12) = (-7),x = 5
+604,(15) + (11) + (-8),The result of (15) + (11) + (-8) is 18.
+605,(17) * (8),The result of (17) * (8) is 136.
+606,(20) + (-27) + (18) + (-10),The result of (20) + (-27) + (18) + (-10) is 1.
+607,(-23) + (9) + (-6) + (-26) + (-28),The result of (-23) + (9) + (-6) + (-26) + (-28) is -74.
+608,(-9) + (-25) + (-20) + (-29) + (21),The result of (-9) + (-25) + (-20) + (-29) + (21) is -62.
+609,Solve for x: (10)*x + (0) = (55),x = 11/2
+610,Solve for x: (7)*x + (6) = (-12),x = -18/7
+611,Solve for x: x + (-14) = (20),x = 34
+612,(23) + (2) + (24) + (16),The result of (23) + (2) + (24) + (16) is 65.
+613,(46) * (3),The result of (46) * (3) is 138.
+614,(9) + (42),The result of (9) + (42) is 51.
+615,(10) + (-7) + (1),The result of (10) + (-7) + (1) is 4.
+616,(-7) + (-9) + (-16) + (-25) + (12),The result of (-7) + (-9) + (-16) + (-25) + (12) is -45.
+617,Solve for x: x*x = (25),x = -5 or x = 5
+618,Solve for x: (3)*x + (-4) = (41),x = 15
+619,Solve for x: x*x = (81),x = -9 or x = 9
+620,Solve for x: (15)*x = (-82),x = -82/15
+621,Solve for x: x*x = (1),x = -1 or x = 1
+622,Solve for x: x*x = (36),x = -6 or x = 6
+623,(-6) + (-29) + (-9) + (11) + (-18),The result of (-6) + (-29) + (-9) + (11) + (-18) is -51.
+624,Solve for x: x*x = (1),x = -1 or x = 1
+625,(-23) + (10) + (-12) + (5),The result of (-23) + (10) + (-12) + (5) is -20.
+626,Solve for x: (20)*x = (-90),x = -9/2
+627,Solve for x: (1)*x + (13) = (43),x = 30
+628,(-13) + (-15) + (3) + (-14) + (-15),The result of (-13) + (-15) + (3) + (-14) + (-15) is -54.
+629,Solve for x: x*x = (16),x = -4 or x = 4
+630,(27) + (26) + (7) + (8) + (24),The result of (27) + (26) + (7) + (8) + (24) is 92.
+631,(9) + (2) + (-26),The result of (9) + (2) + (-26) is -15.
+632,Solve for x: x*x = (36),x = -6 or x = 6
+633,(50) * (-16),The result of (50) * (-16) is -800.
+634,Solve for x: x*x = (64),x = -8 or x = 8
+635,(-28) + (7) + (3),The result of (-28) + (7) + (3) is -18.
+636,Solve for x: (5)*x + (2) = (-16),x = -18/5
+637,(34) + (4),The result of (34) + (4) is 38.
+638,(11) + (-18),The result of (11) + (-18) is -7.
+639,(5) * (-26),The result of (5) * (-26) is -130.
+640,(1) + (-27) + (17) + (17),The result of (1) + (-27) + (17) + (17) is 8.
+641,Solve for x: x + (4) = (10),x = 6
+642,Solve for x: (6)*x + (-3) = (7),x = 5/3
+643,Solve for x: x*x = (81),x = -9 or x = 9
+644,Solve for x: x + (18) = (16),x = -2
+645,Solve for x: x + (-1) = (-6),x = -5
+646,(-7) + (-10) + (9) + (19),The result of (-7) + (-10) + (9) + (19) is 11.
+647,Solve for x: (2)*x + (-19) = (80),x = 99/2
+648,Solve for x: (7)*x = (-43),x = -43/7
+649,Solve for x: (1)*x + (2) = (-8),x = -10
+650,Solve for x: x + (-7) = (-10),x = -3
+651,Solve for x: x*x = (100),x = -10 or x = 10
+652,Solve for x: (5)*x + (-14) = (1),x = 3
+653,(-25) + (25) + (22) + (-12),The result of (-25) + (25) + (22) + (-12) is 10.
+654,Solve for x: (8)*x = (-72),x = -9
+655,Solve for x: (7)*x + (1) = (75),x = 74/7
+656,(7) + (11) + (-25),The result of (7) + (11) + (-25) is -7.
+657,Solve for x: (10)*x + (3) = (2),x = -1/10
+658,Solve for x: x + (-11) = (-12),x = -1
+659,Solve for x: (10)*x + (17) = (62),x = 9/2
+660,Solve for x: x + (1) = (-19),x = -20
+661,Solve for x: x*x = (64),x = -8 or x = 8
+662,(-24) + (6) + (2),The result of (-24) + (6) + (2) is -16.
+663,Solve for x: (3)*x + (16) = (35),x = 19/3
+664,Solve for x: (5)*x + (4) = (-18),x = -22/5
+665,(15) + (19) + (-15),The result of (15) + (19) + (-15) is 19.
+666,(28) + (-5) + (-10) + (-1) + (6),The result of (28) + (-5) + (-10) + (-1) + (6) is 18.
+667,Solve for x: x*x = (9),x = -3 or x = 3
+668,Solve for x: x + (-11) = (2),x = 13
+669,Solve for x: x*x = (1),x = -1 or x = 1
+670,(-28) + (-25) + (7) + (30),The result of (-28) + (-25) + (7) + (30) is -16.
+671,(9) / (23),The result of (9) / (23) is 0.391304347826087.
+672,Solve for x: x*x = (9),x = -3 or x = 3
+673,Solve for x: x*x = (49),x = -7 or x = 7
+674,Solve for x: (9)*x + (13) = (93),x = 80/9
+675,(-5) + (26) + (-8),The result of (-5) + (26) + (-8) is 13.
+676,(21) + (6) + (1) + (20) + (-8),The result of (21) + (6) + (1) + (20) + (-8) is 40.
+677,Solve for x: (2)*x + (-10) = (61),x = 71/2
+678,Solve for x: x + (1) = (-8),x = -9
+679,(37) * (-34),The result of (37) * (-34) is -1258.
+680,Solve for x: (5)*x = (-15),x = -3
+681,(6) + (28),The result of (6) + (28) is 34.
+682,(-29) + (12) + (29),The result of (-29) + (12) + (29) is 12.
+683,Solve for x: x + (3) = (-9),x = -12
+684,Solve for x: (4)*x + (9) = (51),x = 21/2
+685,(10) / (11),The result of (10) / (11) is 0.9090909090909091.
+686,(45) * (32),The result of (45) * (32) is 1440.
+687,Solve for x: (3)*x + (-9) = (25),x = 34/3
+688,Solve for x: x*x = (64),x = -8 or x = 8
+689,(18) + (33),The result of (18) + (33) is 51.
+690,Solve for x: x + (-15) = (-6),x = 9
+691,(47) - (19),The result of (47) - (19) is 28.
+692,(0) + (19) + (-28) + (-12),The result of (0) + (19) + (-28) + (-12) is -21.
+693,Solve for x: (6)*x + (14) = (76),x = 31/3
+694,(-22) + (-17) + (15),The result of (-22) + (-17) + (15) is -24.
+695,(45) - (28),The result of (45) - (28) is 17.
+696,Solve for x: x*x = (81),x = -9 or x = 9
+697,(28) + (23) + (22) + (-16),The result of (28) + (23) + (22) + (-16) is 57.
+698,Solve for x: (8)*x + (-17) = (83),x = 25/2
+699,Solve for x: (2)*x + (20) = (13),x = -7/2
+700,Solve for x: x + (1) = (20),x = 19
+701,(34) + (-5),The result of (34) + (-5) is 29.
+702,(26) + (3) + (-3),The result of (26) + (3) + (-3) is 26.
+703,Solve for x: x + (5) = (16),x = 11
+704,Solve for x: (9)*x + (-8) = (98),x = 106/9
+705,(36) * (-3),The result of (36) * (-3) is -108.
+706,(-10) + (8) + (19),The result of (-10) + (8) + (19) is 17.
+707,(43) + (-35),The result of (43) + (-35) is 8.
+708,(-2) + (14) + (-19) + (13),The result of (-2) + (14) + (-19) + (13) is 6.
+709,Solve for x: (5)*x + (4) = (87),x = 83/5
+710,Solve for x: x*x = (81),x = -9 or x = 9
+711,Solve for x: (10)*x = (3),x = 3/10
+712,Solve for x: (8)*x + (18) = (41),x = 23/8
+713,Solve for x: (6)*x + (17) = (78),x = 61/6
+714,Solve for x: x + (-14) = (17),x = 31
+715,(-28) + (6) + (1),The result of (-28) + (6) + (1) is -21.
+716,Solve for x: (16)*x = (19),x = 19/16
+717,Solve for x: (20)*x = (-67),x = -67/20
+718,Solve for x: x + (-15) = (8),x = 23
+719,Solve for x: (1)*x + (-17) = (11),x = 28
+720,(17) + (-48),The result of (17) + (-48) is -31.
+721,(2) * (-7),The result of (2) * (-7) is -14.
+722,(26) * (-20),The result of (26) * (-20) is -520.
+723,(11) + (19) + (-14),The result of (11) + (19) + (-14) is 16.
+724,Solve for x: x*x = (25),x = -5 or x = 5
+725,Solve for x: (2)*x + (7) = (42),x = 35/2
+726,(32) - (-18),The result of (32) - (-18) is 50.
+727,Solve for x: x*x = (64),x = -8 or x = 8
+728,Solve for x: (8)*x + (19) = (44),x = 25/8
+729,Solve for x: (10)*x + (15) = (52),x = 37/10
+730,Solve for x: (13)*x = (-48),x = -48/13
+731,(17) + (0) + (-27),The result of (17) + (0) + (-27) is -10.
+732,Solve for x: x*x = (64),x = -8 or x = 8
+733,(16) + (30) + (29),The result of (16) + (30) + (29) is 75.
+734,Solve for x: (3)*x = (93),x = 31
+735,Solve for x: x + (-15) = (1),x = 16
+736,Solve for x: x*x = (25),x = -5 or x = 5
+737,Solve for x: x*x = (49),x = -7 or x = 7
+738,Solve for x: x + (-16) = (-2),x = 14
+739,Solve for x: (8)*x + (-18) = (-9),x = 9/8
+740,Solve for x: x*x = (36),x = -6 or x = 6
+741,Solve for x: x + (-12) = (15),x = 27
+742,(2) * (20),The result of (2) * (20) is 40.
+743,(5) + (-16) + (-24) + (-22),The result of (5) + (-16) + (-24) + (-22) is -57.
+744,Solve for x: x*x = (100),x = -10 or x = 10
+745,(41) - (-45),The result of (41) - (-45) is 86.
+746,(40) + (-7),The result of (40) + (-7) is 33.
+747,(43) * (43),The result of (43) * (43) is 1849.
+748,Solve for x: x*x = (36),x = -6 or x = 6
+749,(24) * (-33),The result of (24) * (-33) is -792.
+750,(36) * (50),The result of (36) * (50) is 1800.
+751,Solve for x: (1)*x + (-19) = (8),x = 27
+752,(39) * (-39),The result of (39) * (-39) is -1521.
+753,(26) + (7) + (25) + (6) + (18),The result of (26) + (7) + (25) + (6) + (18) is 82.
+754,(8) + (46),The result of (8) + (46) is 54.
+755,Solve for x: x + (17) = (-1),x = -18
+756,Solve for x: (14)*x = (76),x = 38/7
+757,(-12) + (-20) + (-16),The result of (-12) + (-20) + (-16) is -48.
+758,Solve for x: x*x = (64),x = -8 or x = 8
+759,(21) + (12) + (-15) + (2),The result of (21) + (12) + (-15) + (2) is 20.
+760,(32) * (16),The result of (32) * (16) is 512.
+761,Solve for x: (7)*x + (4) = (10),x = 6/7
+762,Solve for x: x + (-4) = (-17),x = -13
+763,Solve for x: (8)*x + (-15) = (34),x = 49/8
+764,Solve for x: x + (9) = (2),x = -7
+765,Solve for x: (7)*x = (-71),x = -71/7
+766,(16) + (-28),The result of (16) + (-28) is -12.
+767,Solve for x: (8)*x + (-19) = (69),x = 11
+768,Solve for x: x + (-8) = (-5),x = 3
+769,(37) - (-1),The result of (37) - (-1) is 38.
+770,Solve for x: (8)*x = (-62),x = -31/4
+771,(13) / (32),The result of (13) / (32) is 0.40625.
+772,Solve for x: x*x = (81),x = -9 or x = 9
+773,(47) / (15),The result of (47) / (15) is 3.1333333333333333.
+774,(35) - (-46),The result of (35) - (-46) is 81.
+775,Solve for x: (1)*x + (-20) = (3),x = 23
+776,Solve for x: (5)*x + (-9) = (4),x = 13/5
+777,Solve for x: x*x = (4),x = -2 or x = 2
+778,Solve for x: (10)*x + (-15) = (70),x = 17/2
+779,(13) + (-4) + (5),The result of (13) + (-4) + (5) is 14.
+780,Solve for x: x*x = (25),x = -5 or x = 5
+781,(4) / (35),The result of (4) / (35) is 0.11428571428571428.
+782,Solve for x: x*x = (36),x = -6 or x = 6
+783,Solve for x: x + (-15) = (6),x = 21
+784,Solve for x: (20)*x = (87),x = 87/20
+785,(-21) + (-11) + (3),The result of (-21) + (-11) + (3) is -29.
+786,Solve for x: x + (-18) = (19),x = 37
+787,(21) / (37),The result of (21) / (37) is 0.5675675675675675.
+788,Solve for x: x + (-1) = (-10),x = -9
+789,(23) - (9),The result of (23) - (9) is 14.
+790,Solve for x: x + (-12) = (-17),x = -5
+791,Solve for x: x*x = (64),x = -8 or x = 8
+792,(7) + (-6) + (6) + (0) + (-23),The result of (7) + (-6) + (6) + (0) + (-23) is -16.
+793,Solve for x: (8)*x + (-3) = (98),x = 101/8
+794,Solve for x: (2)*x = (29),x = 29/2
+795,Solve for x: (1)*x + (20) = (14),x = -6
+796,(-5) + (-9) + (-15) + (-4) + (-10),The result of (-5) + (-9) + (-15) + (-4) + (-10) is -43.
+797,Solve for x: x*x = (81),x = -9 or x = 9
+798,Solve for x: (18)*x = (-69),x = -23/6
+799,Solve for x: (4)*x + (11) = (43),x = 8
+800,(3) + (16),The result of (3) + (16) is 19.
+801,(-27) + (-27) + (15),The result of (-27) + (-27) + (15) is -39.
+802,(-30) + (3) + (-23),The result of (-30) + (3) + (-23) is -50.
+803,(-27) + (2) + (12),The result of (-27) + (2) + (12) is -13.
+804,(-25) + (-22) + (-13) + (27),The result of (-25) + (-22) + (-13) + (27) is -33.
+805,Solve for x: x*x = (64),x = -8 or x = 8
+806,Solve for x: (7)*x + (-8) = (78),x = 86/7
+807,(28) + (-8) + (20),The result of (28) + (-8) + (20) is 40.
+808,Solve for x: (9)*x + (-3) = (88),x = 91/9
+809,(15) + (-34),The result of (15) + (-34) is -19.
+810,(14) + (23) + (3),The result of (14) + (23) + (3) is 40.
+811,Solve for x: (1)*x + (-6) = (-1),x = 5
+812,Solve for x: x*x = (64),x = -8 or x = 8
+813,Solve for x: x + (-11) = (-13),x = -2
+814,(39) / (47),The result of (39) / (47) is 0.8297872340425532.
+815,(18) / (9),The result of (18) / (9) is 2.0.
+816,(45) - (-18),The result of (45) - (-18) is 63.
+817,(42) * (-15),The result of (42) * (-15) is -630.
+818,Solve for x: (7)*x + (0) = (49),x = 7
+819,Solve for x: (3)*x + (12) = (42),x = 10
+820,Solve for x: (7)*x + (18) = (1),x = -17/7
+821,Solve for x: x*x = (9),x = -3 or x = 3
+822,(27) + (26) + (-30) + (30) + (26),The result of (27) + (26) + (-30) + (30) + (26) is 79.
+823,Solve for x: (14)*x = (-69),x = -69/14
+824,Solve for x: (1)*x + (3) = (68),x = 65
+825,Solve for x: x*x = (49),x = -7 or x = 7
+826,Solve for x: (19)*x = (98),x = 98/19
+827,(15) / (28),The result of (15) / (28) is 0.5357142857142857.
+828,(4) / (15),The result of (4) / (15) is 0.26666666666666666.
+829,(10) + (-3) + (-26),The result of (10) + (-3) + (-26) is -19.
+830,Solve for x: (8)*x + (16) = (37),x = 21/8
+831,Solve for x: x*x = (36),x = -6 or x = 6
+832,Solve for x: (7)*x = (-87),x = -87/7
+833,Solve for x: x*x = (1),x = -1 or x = 1
+834,Solve for x: (15)*x = (9),x = 3/5
+835,Solve for x: (13)*x = (17),x = 17/13
+836,Solve for x: (6)*x + (-20) = (6),x = 13/3
+837,(26) * (24),The result of (26) * (24) is 624.
+838,Solve for x: (4)*x = (-57),x = -57/4
+839,Solve for x: (7)*x + (-18) = (66),x = 12
+840,(5) + (22),The result of (5) + (22) is 27.
+841,(-6) + (30) + (-17) + (-25),The result of (-6) + (30) + (-17) + (-25) is -18.
+842,Solve for x: x*x = (49),x = -7 or x = 7
+843,(13) - (-18),The result of (13) - (-18) is 31.
+844,(-6) + (0) + (-13) + (25) + (-22),The result of (-6) + (0) + (-13) + (25) + (-22) is -16.
+845,(15) + (-30) + (-10) + (-25),The result of (15) + (-30) + (-10) + (-25) is -50.
+846,Solve for x: x*x = (49),x = -7 or x = 7
+847,(-24) + (-17) + (-23) + (27) + (7),The result of (-24) + (-17) + (-23) + (27) + (7) is -30.
+848,Solve for x: (15)*x = (22),x = 22/15
+849,(10) + (-23) + (13),The result of (10) + (-23) + (13) is 0.
+850,(34) * (18),The result of (34) * (18) is 612.
+851,(12) + (17) + (-8) + (7),The result of (12) + (17) + (-8) + (7) is 28.
+852,Solve for x: (3)*x + (16) = (41),x = 25/3
+853,Solve for x: (4)*x + (7) = (17),x = 5/2
+854,Solve for x: (9)*x + (-14) = (2),x = 16/9
+855,(-14) + (22) + (2) + (-27) + (1),The result of (-14) + (22) + (2) + (-27) + (1) is -16.
+856,(21) * (20),The result of (21) * (20) is 420.
+857,(-7) + (21) + (-2) + (18),The result of (-7) + (21) + (-2) + (18) is 30.
+858,Solve for x: (5)*x + (18) = (36),x = 18/5
+859,(-14) + (-24) + (24) + (7) + (22),The result of (-14) + (-24) + (24) + (7) + (22) is 15.
+860,Solve for x: x + (15) = (18),x = 3
+861,Solve for x: (9)*x + (0) = (26),x = 26/9
+862,(-4) + (-13) + (14),The result of (-4) + (-13) + (14) is -3.
+863,Solve for x: (6)*x = (-93),x = -31/2
+864,Solve for x: x*x = (1),x = -1 or x = 1
+865,Solve for x: (9)*x = (74),x = 74/9
+866,Solve for x: (10)*x + (4) = (15),x = 11/10
+867,(25) - (11),The result of (25) - (11) is 14.
+868,Solve for x: x + (-4) = (14),x = 18
+869,(-25) + (12) + (13),The result of (-25) + (12) + (13) is 0.
+870,(4) + (-2),The result of (4) + (-2) is 2.
+871,(29) + (-1) + (30) + (4),The result of (29) + (-1) + (30) + (4) is 62.
+872,Solve for x: x + (-4) = (-8),x = -4
+873,Solve for x: (11)*x = (24),x = 24/11
+874,Solve for x: (4)*x + (14) = (91),x = 77/4
+875,(21) + (-21) + (1),The result of (21) + (-21) + (1) is 1.
+876,(10) + (-23) + (-13) + (-13),The result of (10) + (-23) + (-13) + (-13) is -39.
+877,(26) + (-29) + (-16) + (20) + (-5),The result of (26) + (-29) + (-16) + (20) + (-5) is -4.
+878,Solve for x: (6)*x + (5) = (66),x = 61/6
+879,Solve for x: x*x = (9),x = -3 or x = 3
+880,Solve for x: (4)*x + (-10) = (9),x = 19/4
+881,Solve for x: x + (-13) = (16),x = 29
+882,(-30) + (-14) + (21),The result of (-30) + (-14) + (21) is -23.
+883,(5) + (-22),The result of (5) + (-22) is -17.
+884,Solve for x: x*x = (81),x = -9 or x = 9
+885,(3) / (7),The result of (3) / (7) is 0.42857142857142855.
+886,Solve for x: (7)*x + (18) = (33),x = 15/7
+887,Solve for x: x*x = (36),x = -6 or x = 6
+888,(42) / (10),The result of (42) / (10) is 4.2.
+889,Solve for x: x*x = (100),x = -10 or x = 10
+890,Solve for x: (6)*x = (13),x = 13/6
+891,Solve for x: x*x = (49),x = -7 or x = 7
+892,Solve for x: (9)*x + (15) = (18),x = 1/3
+893,(-6) + (-25) + (-25) + (0),The result of (-6) + (-25) + (-25) + (0) is -56.
+894,Solve for x: x + (-16) = (-17),x = -1
+895,Solve for x: (3)*x + (0) = (31),x = 31/3
+896,Solve for x: (5)*x + (-12) = (-1),x = 11/5
+897,(35) * (-22),The result of (35) * (-22) is -770.
+898,Solve for x: x*x = (25),x = -5 or x = 5
+899,(17) + (-1) + (25) + (-23),The result of (17) + (-1) + (25) + (-23) is 18.
+900,Solve for x: (17)*x = (-18),x = -18/17
+901,Solve for x: x*x = (4),x = -2 or x = 2
+902,(-6) + (5) + (15) + (15),The result of (-6) + (5) + (15) + (15) is 29.
+903,Solve for x: (14)*x = (74),x = 37/7
+904,(50) * (5),The result of (50) * (5) is 250.
+905,(4) + (-44),The result of (4) + (-44) is -40.
+906,(17) / (33),The result of (17) / (33) is 0.5151515151515151.
+907,Solve for x: (2)*x + (-9) = (3),x = 6
+908,(-8) + (1) + (-21),The result of (-8) + (1) + (-21) is -28.
+909,Solve for x: (10)*x + (-5) = (14),x = 19/10
+910,(31) - (-17),The result of (31) - (-17) is 48.
+911,(36) * (-18),The result of (36) * (-18) is -648.
+912,Solve for x: x + (-8) = (11),x = 19
+913,(40) / (23),The result of (40) / (23) is 1.7391304347826086.
+914,(-14) + (9) + (-24) + (-6),The result of (-14) + (9) + (-24) + (-6) is -35.
+915,(-25) + (16) + (-6) + (24),The result of (-25) + (16) + (-6) + (24) is 9.
+916,Solve for x: (4)*x + (17) = (97),x = 20
+917,Solve for x: (17)*x = (72),x = 72/17
+918,Solve for x: (2)*x + (-4) = (2),x = 3
+919,(2) / (3),The result of (2) / (3) is 0.6666666666666666.
+920,(47) * (20),The result of (47) * (20) is 940.
+921,(39) / (12),The result of (39) / (12) is 3.25.
+922,Solve for x: (7)*x + (-5) = (72),x = 11
+923,(24) * (50),The result of (24) * (50) is 1200.
+924,(29) + (-8) + (0) + (-3) + (-22),The result of (29) + (-8) + (0) + (-3) + (-22) is -4.
+925,Solve for x: x*x = (100),x = -10 or x = 10
+926,Solve for x: (1)*x + (1) = (-4),x = -5
+927,Solve for x: (12)*x = (28),x = 7/3
+928,(3) + (18) + (-13),The result of (3) + (18) + (-13) is 8.
+929,Solve for x: (8)*x + (-8) = (58),x = 33/4
+930,Solve for x: (19)*x = (-10),x = -10/19
+931,(-28) + (1) + (28) + (12),The result of (-28) + (1) + (28) + (12) is 13.
+932,Solve for x: x + (-17) = (-17),x = 0
+933,Solve for x: (12)*x = (94),x = 47/6
+934,Solve for x: (1)*x + (2) = (-17),x = -19
+935,Solve for x: x*x = (25),x = -5 or x = 5
+936,Solve for x: (3)*x + (3) = (42),x = 13
+937,Solve for x: (2)*x = (-34),x = -17
+938,Solve for x: x*x = (25),x = -5 or x = 5
+939,Solve for x: (5)*x + (-18) = (81),x = 99/5
+940,Solve for x: x*x = (100),x = -10 or x = 10
+941,(17) / (12),The result of (17) / (12) is 1.4166666666666667.
+942,Solve for x: x*x = (16),x = -4 or x = 4
+943,Solve for x: (9)*x = (-15),x = -5/3
+944,Solve for x: x + (8) = (15),x = 7
+945,Solve for x: (2)*x + (2) = (27),x = 25/2
+946,Solve for x: x*x = (100),x = -10 or x = 10
+947,Solve for x: x*x = (4),x = -2 or x = 2
+948,(9) + (-24) + (23) + (7) + (-8),The result of (9) + (-24) + (23) + (7) + (-8) is 7.
+949,(19) + (5) + (5) + (24),The result of (19) + (5) + (5) + (24) is 53.
+950,Solve for x: (6)*x + (-19) = (0),x = 19/6
+951,(12) + (9) + (30) + (-16) + (27),The result of (12) + (9) + (30) + (-16) + (27) is 62.
+952,Solve for x: (17)*x = (-28),x = -28/17
+953,Solve for x: x*x = (16),x = -4 or x = 4
+954,(12) + (-27) + (-13) + (9) + (16),The result of (12) + (-27) + (-13) + (9) + (16) is -3.
+955,(27) / (17),The result of (27) / (17) is 1.588235294117647.
+956,(-13) + (-14) + (-8) + (10),The result of (-13) + (-14) + (-8) + (10) is -25.
+957,Solve for x: x + (18) = (19),x = 1
+958,(-14) + (5) + (12) + (26),The result of (-14) + (5) + (12) + (26) is 29.
+959,(27) + (-13),The result of (27) + (-13) is 14.
+960,Solve for x: x + (17) = (-15),x = -32
+961,Solve for x: x*x = (100),x = -10 or x = 10
+962,(21) - (-22),The result of (21) - (-22) is 43.
+963,(-19) + (-15) + (-30),The result of (-19) + (-15) + (-30) is -64.
+964,Solve for x: x*x = (36),x = -6 or x = 6
+965,Solve for x: (17)*x = (-77),x = -77/17
+966,Solve for x: x*x = (9),x = -3 or x = 3
+967,(50) + (15),The result of (50) + (15) is 65.
+968,(-8) + (22) + (-7),The result of (-8) + (22) + (-7) is 7.
+969,Solve for x: x*x = (81),x = -9 or x = 9
+970,Solve for x: x*x = (81),x = -9 or x = 9
+971,Solve for x: (3)*x + (-11) = (59),x = 70/3
+972,Solve for x: x*x = (9),x = -3 or x = 3
+973,(-10) + (6) + (-19) + (-11),The result of (-10) + (6) + (-19) + (-11) is -34.
+974,(-24) + (-25) + (-5) + (18) + (18),The result of (-24) + (-25) + (-5) + (18) + (18) is -18.
+975,Solve for x: x*x = (1),x = -1 or x = 1
+976,(17) / (41),The result of (17) / (41) is 0.4146341463414634.
+977,Solve for x: x*x = (1),x = -1 or x = 1
+978,(8) / (10),The result of (8) / (10) is 0.8.
+979,(49) / (38),The result of (49) / (38) is 1.2894736842105263.
+980,Solve for x: (2)*x + (-2) = (51),x = 53/2
+981,Solve for x: x*x = (4),x = -2 or x = 2
+982,Solve for x: x*x = (4),x = -2 or x = 2
+983,Solve for x: x + (10) = (4),x = -6
+984,Solve for x: x*x = (81),x = -9 or x = 9
+985,(-12) + (7) + (-1) + (29) + (-16),The result of (-12) + (7) + (-1) + (29) + (-16) is 7.
+986,Solve for x: (15)*x = (-82),x = -82/15
+987,(25) + (13) + (-2) + (25) + (6),The result of (25) + (13) + (-2) + (25) + (6) is 67.
+988,Solve for x: (9)*x + (14) = (85),x = 71/9
+989,Solve for x: x + (-11) = (15),x = 26
+990,Solve for x: (6)*x + (16) = (58),x = 7
+991,(-9) + (1) + (-22) + (-25),The result of (-9) + (1) + (-22) + (-25) is -55.
+992,Solve for x: x + (19) = (-15),x = -34
+993,Solve for x: x*x = (81),x = -9 or x = 9
+994,Solve for x: (2)*x + (9) = (94),x = 85/2
+995,Solve for x: x*x = (49),x = -7 or x = 7
+996,(-25) + (-10) + (4) + (-10),The result of (-25) + (-10) + (4) + (-10) is -41.
+997,(-23) + (-23) + (25) + (10),The result of (-23) + (-23) + (25) + (10) is -11.
+998,Solve for x: x*x = (64),x = -8 or x = 8
+999,Solve for x: (10)*x + (16) = (10),x = -3/5
+1000,(-16) + (3) + (-17) + (13),The result of (-16) + (3) + (-17) + (13) is -17.
+1001,(27) + (18) + (5) + (15),The result of (27) + (18) + (5) + (15) is 65.
+1002,(6) + (24) + (-17) + (-5) + (-20),The result of (6) + (24) + (-17) + (-5) + (-20) is -12.
+1003,Solve for x: (2)*x + (-8) = (95),x = 103/2
+1004,(23) + (-6) + (-3) + (17),The result of (23) + (-6) + (-3) + (17) is 31.
+1005,Solve for x: (10)*x = (9),x = 9/10
+1006,Solve for x: (14)*x = (26),x = 13/7
+1007,(-20) + (-6) + (-30),The result of (-20) + (-6) + (-30) is -56.
+1008,Solve for x: x*x = (1),x = -1 or x = 1
+1009,Solve for x: (9)*x + (-12) = (86),x = 98/9
+1010,Solve for x: (19)*x = (-68),x = -68/19
+1011,Solve for x: (1)*x + (-2) = (92),x = 94
+1012,Solve for x: (4)*x + (13) = (24),x = 11/4
+1013,(6) + (-1) + (5) + (-30),The result of (6) + (-1) + (5) + (-30) is -20.
+1014,Solve for x: x*x = (49),x = -7 or x = 7
+1015,(6) - (16),The result of (6) - (16) is -10.
+1016,Solve for x: (4)*x + (4) = (2),x = -1/2
+1017,Solve for x: x*x = (16),x = -4 or x = 4
+1018,Solve for x: x*x = (64),x = -8 or x = 8
+1019,(21) + (27),The result of (21) + (27) is 48.
+1020,Solve for x: (4)*x + (-10) = (25),x = 35/4
+1021,(39) - (-22),The result of (39) - (-22) is 61.
+1022,(-24) + (-6) + (-25) + (24),The result of (-24) + (-6) + (-25) + (24) is -31.
+1023,(44) - (-1),The result of (44) - (-1) is 45.
+1024,(-20) + (19) + (-7) + (-1),The result of (-20) + (19) + (-7) + (-1) is -9.
+1025,(7) + (27) + (-25) + (22) + (4),The result of (7) + (27) + (-25) + (22) + (4) is 35.
+1026,(36) + (23),The result of (36) + (23) is 59.
+1027,Solve for x: x*x = (100),x = -10 or x = 10
+1028,Solve for x: (2)*x + (7) = (55),x = 24
+1029,Solve for x: (7)*x + (-3) = (95),x = 14
+1030,Solve for x: (9)*x + (17) = (-3),x = -20/9
+1031,(27) + (2) + (-13) + (7) + (30),The result of (27) + (2) + (-13) + (7) + (30) is 53.
+1032,(42) * (-26),The result of (42) * (-26) is -1092.
+1033,Solve for x: (14)*x = (-75),x = -75/14
+1034,(-22) + (-1) + (3),The result of (-22) + (-1) + (3) is -20.
+1035,Solve for x: (18)*x = (90),x = 5
+1036,(37) + (-12),The result of (37) + (-12) is 25.
+1037,(-25) + (27) + (-18) + (14),The result of (-25) + (27) + (-18) + (14) is -2.
+1038,Solve for x: (10)*x + (7) = (-1),x = -4/5
+1039,Solve for x: x + (0) = (1),x = 1
+1040,Solve for x: x*x = (49),x = -7 or x = 7
+1041,Solve for x: (4)*x + (0) = (95),x = 95/4
+1042,(-22) + (-18) + (1),The result of (-22) + (-18) + (1) is -39.
+1043,(-25) + (3) + (-28) + (15),The result of (-25) + (3) + (-28) + (15) is -35.
+1044,Solve for x: x*x = (1),x = -1 or x = 1
+1045,(5) + (25) + (-11) + (29),The result of (5) + (25) + (-11) + (29) is 48.
+1046,Solve for x: x*x = (100),x = -10 or x = 10
+1047,Solve for x: (3)*x + (20) = (99),x = 79/3
+1048,(27) + (22) + (-27) + (4) + (-28),The result of (27) + (22) + (-27) + (4) + (-28) is -2.
+1049,Solve for x: (16)*x = (-93),x = -93/16
+1050,Solve for x: (4)*x = (-15),x = -15/4
+1051,Solve for x: x*x = (4),x = -2 or x = 2
+1052,(26) + (-3) + (-10),The result of (26) + (-3) + (-10) is 13.
+1053,Solve for x: x*x = (9),x = -3 or x = 3
+1054,Solve for x: (2)*x + (11) = (62),x = 51/2
+1055,Solve for x: x + (13) = (-9),x = -22
+1056,(1) - (-33),The result of (1) - (-33) is 34.
+1057,(17) + (-3),The result of (17) + (-3) is 14.
+1058,Solve for x: x + (-18) = (-3),x = 15
+1059,(-2) + (0) + (23) + (-24),The result of (-2) + (0) + (23) + (-24) is -3.
+1060,Solve for x: x*x = (81),x = -9 or x = 9
+1061,(-17) + (10) + (10) + (16) + (-22),The result of (-17) + (10) + (10) + (16) + (-22) is -3.
+1062,(27) + (12) + (-15),The result of (27) + (12) + (-15) is 24.
+1063,Solve for x: x*x = (25),x = -5 or x = 5
+1064,Solve for x: (3)*x = (-7),x = -7/3
+1065,Solve for x: (7)*x + (-19) = (80),x = 99/7
+1066,Solve for x: x + (-11) = (-15),x = -4
+1067,Solve for x: x*x = (16),x = -4 or x = 4
+1068,Solve for x: (10)*x + (1) = (71),x = 7
+1069,Solve for x: (16)*x = (-55),x = -55/16
+1070,Solve for x: x*x = (64),x = -8 or x = 8
+1071,(35) / (36),The result of (35) / (36) is 0.9722222222222222.
+1072,(10) + (-17) + (-9) + (18) + (12),The result of (10) + (-17) + (-9) + (18) + (12) is 14.
+1073,Solve for x: x*x = (16),x = -4 or x = 4
+1074,(19) + (-9) + (24) + (-12) + (-7),The result of (19) + (-9) + (24) + (-12) + (-7) is 15.
+1075,(49) / (36),The result of (49) / (36) is 1.3611111111111112.
+1076,Solve for x: x*x = (16),x = -4 or x = 4
+1077,Solve for x: (4)*x + (20) = (37),x = 17/4
+1078,(-20) + (25) + (9),The result of (-20) + (25) + (9) is 14.
+1079,(3) + (-12) + (-25) + (-4),The result of (3) + (-12) + (-25) + (-4) is -38.
+1080,Solve for x: x*x = (49),x = -7 or x = 7
+1081,(17) + (-25) + (29) + (-20) + (26),The result of (17) + (-25) + (29) + (-20) + (26) is 27.
+1082,Solve for x: (1)*x + (-1) = (78),x = 79
+1083,(29) + (-40),The result of (29) + (-40) is -11.
+1084,(38) * (26),The result of (38) * (26) is 988.
+1085,Solve for x: (6)*x + (6) = (93),x = 29/2
+1086,Solve for x: (1)*x = (38),x = 38
+1087,Solve for x: (1)*x + (-12) = (26),x = 38
+1088,(39) + (-32),The result of (39) + (-32) is 7.
+1089,Solve for x: (10)*x + (-17) = (69),x = 43/5
+1090,(12) + (36),The result of (12) + (36) is 48.
+1091,Solve for x: x*x = (16),x = -4 or x = 4
+1092,(32) - (-19),The result of (32) - (-19) is 51.
+1093,(9) * (-6),The result of (9) * (-6) is -54.
+1094,Solve for x: x + (3) = (17),x = 14
+1095,(50) - (-34),The result of (50) - (-34) is 84.
+1096,(-20) + (26) + (11) + (14),The result of (-20) + (26) + (11) + (14) is 31.
+1097,Solve for x: x*x = (100),x = -10 or x = 10
+1098,(5) + (28) + (4),The result of (5) + (28) + (4) is 37.
+1099,Solve for x: (4)*x + (-17) = (14),x = 31/4
+1100,Solve for x: (14)*x = (100),x = 50/7
+1101,Solve for x: (5)*x + (-5) = (19),x = 24/5
+1102,(43) * (-47),The result of (43) * (-47) is -2021.
+1103,Solve for x: (3)*x + (-11) = (92),x = 103/3
+1104,(10) * (10),The result of (10) * (10) is 100.
+1105,Solve for x: x + (7) = (2),x = -5
+1106,(43) / (26),The result of (43) / (26) is 1.6538461538461537.
+1107,(-18) + (29) + (17),The result of (-18) + (29) + (17) is 28.
+1108,Solve for x: x*x = (25),x = -5 or x = 5
+1109,(-25) + (-6) + (-4),The result of (-25) + (-6) + (-4) is -35.
+1110,(35) + (13),The result of (35) + (13) is 48.
+1111,Solve for x: x*x = (4),x = -2 or x = 2
+1112,(15) + (-25) + (13) + (-17) + (16),The result of (15) + (-25) + (13) + (-17) + (16) is 2.
+1113,Solve for x: (4)*x + (-20) = (49),x = 69/4
+1114,Solve for x: (8)*x + (5) = (36),x = 31/8
+1115,(-23) + (5) + (30),The result of (-23) + (5) + (30) is 12.
+1116,Solve for x: x + (-6) = (17),x = 23
+1117,(-28) + (19) + (16),The result of (-28) + (19) + (16) is 7.
+1118,Solve for x: (5)*x = (-20),x = -4
+1119,Solve for x: x*x = (36),x = -6 or x = 6
+1120,(10) + (-15) + (23) + (2) + (6),The result of (10) + (-15) + (23) + (2) + (6) is 26.
+1121,Solve for x: (2)*x + (7) = (10),x = 3/2
+1122,Solve for x: (3)*x + (19) = (69),x = 50/3
+1123,Solve for x: (8)*x + (-1) = (38),x = 39/8
+1124,(-21) + (10) + (-10) + (-12) + (4),The result of (-21) + (10) + (-10) + (-12) + (4) is -29.
+1125,Solve for x: (1)*x + (14) = (75),x = 61
+1126,(-2) + (-26) + (-14),The result of (-2) + (-26) + (-14) is -42.
+1127,Solve for x: (9)*x = (-91),x = -91/9
+1128,Solve for x: x*x = (4),x = -2 or x = 2
+1129,Solve for x: (12)*x = (-19),x = -19/12
+1130,(43) * (31),The result of (43) * (31) is 1333.
+1131,(-26) + (-20) + (-11) + (12),The result of (-26) + (-20) + (-11) + (12) is -45.
+1132,(25) + (-15) + (16) + (29),The result of (25) + (-15) + (16) + (29) is 55.
+1133,(12) + (40),The result of (12) + (40) is 52.
+1134,(24) + (5) + (-11) + (22) + (17),The result of (24) + (5) + (-11) + (22) + (17) is 57.
+1135,(-14) + (3) + (-21) + (-19) + (28),The result of (-14) + (3) + (-21) + (-19) + (28) is -23.
+1136,Solve for x: x*x = (9),x = -3 or x = 3
+1137,Solve for x: x*x = (64),x = -8 or x = 8
+1138,Solve for x: x + (1) = (-1),x = -2
+1139,(48) - (-38),The result of (48) - (-38) is 86.
+1140,(2) * (-21),The result of (2) * (-21) is -42.
+1141,Solve for x: x*x = (64),x = -8 or x = 8
+1142,(37) * (-47),The result of (37) * (-47) is -1739.
+1143,Solve for x: x*x = (1),x = -1 or x = 1
+1144,(25) * (-9),The result of (25) * (-9) is -225.
+1145,Solve for x: (9)*x + (-5) = (59),x = 64/9
+1146,(-12) + (-18) + (27) + (-30) + (23),The result of (-12) + (-18) + (27) + (-30) + (23) is -10.
+1147,Solve for x: (3)*x + (4) = (-14),x = -6
+1148,Solve for x: (6)*x + (-16) = (19),x = 35/6
+1149,Solve for x: x*x = (81),x = -9 or x = 9
+1150,Solve for x: x + (15) = (-2),x = -17
+1151,Solve for x: x*x = (16),x = -4 or x = 4
+1152,Solve for x: (18)*x = (3),x = 1/6
+1153,Solve for x: (4)*x + (3) = (-14),x = -17/4
+1154,Solve for x: (19)*x = (-85),x = -85/19
+1155,(9) + (-11) + (15) + (3),The result of (9) + (-11) + (15) + (3) is 16.
+1156,Solve for x: x + (-10) = (-4),x = 6
+1157,Solve for x: (13)*x = (-55),x = -55/13
+1158,(-24) + (-14) + (14) + (4),The result of (-24) + (-14) + (14) + (4) is -20.
+1159,(28) + (-9) + (13) + (6),The result of (28) + (-9) + (13) + (6) is 38.
+1160,(5) + (-9) + (-17) + (27),The result of (5) + (-9) + (-17) + (27) is 6.
+1161,Solve for x: (3)*x + (-7) = (1),x = 8/3
+1162,(9) + (-23) + (-13) + (-3),The result of (9) + (-23) + (-13) + (-3) is -30.
+1163,(30) + (15) + (-17) + (-4) + (10),The result of (30) + (15) + (-17) + (-4) + (10) is 34.
+1164,(36) - (9),The result of (36) - (9) is 27.
+1165,Solve for x: x + (-10) = (-13),x = -3
+1166,(-5) + (20) + (-8) + (-12) + (-17),The result of (-5) + (20) + (-8) + (-12) + (-17) is -22.
+1167,(30) + (-26) + (5),The result of (30) + (-26) + (5) is 9.
+1168,Solve for x: x*x = (64),x = -8 or x = 8
+1169,(-19) + (20) + (-7) + (-27) + (-19),The result of (-19) + (20) + (-7) + (-27) + (-19) is -52.
+1170,(44) + (0),The result of (44) + (0) is 44.
+1171,Solve for x: x + (-16) = (20),x = 36
+1172,Solve for x: (8)*x + (-15) = (35),x = 25/4
+1173,Solve for x: x*x = (64),x = -8 or x = 8
+1174,Solve for x: x + (-11) = (20),x = 31
+1175,Solve for x: x + (-12) = (-16),x = -4
+1176,Solve for x: (3)*x + (19) = (50),x = 31/3
+1177,(26) * (35),The result of (26) * (35) is 910.
+1178,(26) + (25),The result of (26) + (25) is 51.
+1179,Solve for x: x*x = (49),x = -7 or x = 7
+1180,Solve for x: x*x = (36),x = -6 or x = 6
+1181,Solve for x: (3)*x + (18) = (-1),x = -19/3
+1182,Solve for x: (15)*x = (32),x = 32/15
+1183,Solve for x: (5)*x + (11) = (6),x = -1
+1184,(-10) + (11) + (28) + (10),The result of (-10) + (11) + (28) + (10) is 39.
+1185,Solve for x: (18)*x = (8),x = 4/9
+1186,(-9) + (-13) + (9) + (-9) + (-5),The result of (-9) + (-13) + (9) + (-9) + (-5) is -27.
+1187,Solve for x: x*x = (16),x = -4 or x = 4
+1188,Solve for x: (1)*x + (-11) = (55),x = 66
+1189,Solve for x: x*x = (4),x = -2 or x = 2
+1190,Solve for x: (20)*x = (72),x = 18/5
+1191,Solve for x: x*x = (49),x = -7 or x = 7
+1192,Solve for x: (3)*x + (16) = (-2),x = -6
+1193,(6) / (4),The result of (6) / (4) is 1.5.
+1194,Solve for x: x*x = (36),x = -6 or x = 6
+1195,Solve for x: (17)*x = (33),x = 33/17
+1196,Solve for x: x*x = (64),x = -8 or x = 8
+1197,(47) * (43),The result of (47) * (43) is 2021.
+1198,(-27) + (-6) + (28) + (20),The result of (-27) + (-6) + (28) + (20) is 15.
+1199,Solve for x: (5)*x + (-18) = (94),x = 112/5
+1200,(41) - (6),The result of (41) - (6) is 35.
+1201,Solve for x: x*x = (9),x = -3 or x = 3
+1202,Solve for x: x*x = (4),x = -2 or x = 2
+1203,Solve for x: (3)*x + (5) = (45),x = 40/3
+1204,Solve for x: x*x = (16),x = -4 or x = 4
+1205,Solve for x: (10)*x + (-7) = (42),x = 49/10
+1206,(47) * (36),The result of (47) * (36) is 1692.
+1207,(35) / (40),The result of (35) / (40) is 0.875.
+1208,Solve for x: (11)*x = (-12),x = -12/11
+1209,Solve for x: x*x = (100),x = -10 or x = 10
+1210,Solve for x: (10)*x + (-4) = (21),x = 5/2
+1211,(10) / (36),The result of (10) / (36) is 0.2777777777777778.
+1212,Solve for x: x*x = (25),x = -5 or x = 5
+1213,Solve for x: x + (1) = (17),x = 16
+1214,Solve for x: (7)*x + (19) = (-12),x = -31/7
+1215,Solve for x: (18)*x = (73),x = 73/18
+1216,(47) - (23),The result of (47) - (23) is 24.
+1217,Solve for x: x + (-13) = (-3),x = 10
+1218,(45) + (-47),The result of (45) + (-47) is -2.
+1219,(43) - (-28),The result of (43) - (-28) is 71.
+1220,Solve for x: x*x = (1),x = -1 or x = 1
+1221,Solve for x: x*x = (100),x = -10 or x = 10
+1222,(0) + (6) + (3) + (17),The result of (0) + (6) + (3) + (17) is 26.
+1223,Solve for x: (1)*x + (-9) = (-15),x = -6
+1224,Solve for x: x*x = (64),x = -8 or x = 8
+1225,(29) + (-16) + (30) + (21) + (29),The result of (29) + (-16) + (30) + (21) + (29) is 93.
+1226,(1) / (46),The result of (1) / (46) is 0.021739130434782608.
+1227,(-15) + (-26) + (15) + (-13) + (-22),The result of (-15) + (-26) + (15) + (-13) + (-22) is -61.
+1228,Solve for x: (4)*x + (3) = (59),x = 14
+1229,Solve for x: x + (-14) = (0),x = 14
+1230,(26) + (23),The result of (26) + (23) is 49.
+1231,(37) / (21),The result of (37) / (21) is 1.7619047619047619.
+1232,Solve for x: (8)*x + (6) = (87),x = 81/8
+1233,(21) + (27) + (20),The result of (21) + (27) + (20) is 68.
+1234,Solve for x: x + (-8) = (2),x = 10
+1235,Solve for x: (6)*x + (-20) = (93),x = 113/6
+1236,Solve for x: x*x = (9),x = -3 or x = 3
+1237,(-29) + (-7) + (17),The result of (-29) + (-7) + (17) is -19.
+1238,(46) - (43),The result of (46) - (43) is 3.
+1239,Solve for x: x*x = (9),x = -3 or x = 3
+1240,(6) + (0) + (-22) + (-6),The result of (6) + (0) + (-22) + (-6) is -22.
+1241,(2) + (-10) + (-5) + (5),The result of (2) + (-10) + (-5) + (5) is -8.
+1242,Solve for x: x*x = (9),x = -3 or x = 3
+1243,(22) * (-48),The result of (22) * (-48) is -1056.
+1244,Solve for x: (11)*x = (-67),x = -67/11
+1245,(9) + (-6) + (-21) + (26) + (-24),The result of (9) + (-6) + (-21) + (26) + (-24) is -16.
+1246,(49) - (29),The result of (49) - (29) is 20.
+1247,Solve for x: (9)*x = (-90),x = -10
+1248,(3) - (-6),The result of (3) - (-6) is 9.
+1249,Solve for x: (15)*x = (-47),x = -47/15
+1250,Solve for x: x + (12) = (-20),x = -32
+1251,(48) * (14),The result of (48) * (14) is 672.
+1252,Solve for x: x*x = (25),x = -5 or x = 5
+1253,Solve for x: (8)*x + (2) = (12),x = 5/4
+1254,Solve for x: x + (8) = (11),x = 3
+1255,Solve for x: (6)*x + (6) = (-16),x = -11/3
+1256,Solve for x: x + (20) = (-17),x = -37
+1257,(15) + (23) + (5),The result of (15) + (23) + (5) is 43.
+1258,Solve for x: (1)*x = (-73),x = -73
+1259,(-23) + (-3) + (14),The result of (-23) + (-3) + (14) is -12.
+1260,(26) * (-2),The result of (26) * (-2) is -52.
+1261,Solve for x: (5)*x + (9) = (80),x = 71/5
+1262,Solve for x: (10)*x + (17) = (57),x = 4
+1263,Solve for x: (1)*x = (25),x = 25
+1264,(36) - (40),The result of (36) - (40) is -4.
+1265,Solve for x: (10)*x + (6) = (33),x = 27/10
+1266,Solve for x: (12)*x = (-91),x = -91/12
+1267,Solve for x: x*x = (100),x = -10 or x = 10
+1268,Solve for x: (5)*x + (4) = (33),x = 29/5
+1269,(3) * (9),The result of (3) * (9) is 27.
+1270,Solve for x: (3)*x + (11) = (34),x = 23/3
+1271,Solve for x: (15)*x = (-25),x = -5/3
+1272,(-26) + (-29) + (14),The result of (-26) + (-29) + (14) is -41.
+1273,Solve for x: (3)*x + (-10) = (96),x = 106/3
+1274,(36) - (-45),The result of (36) - (-45) is 81.
+1275,(3) + (34),The result of (3) + (34) is 37.
+1276,Solve for x: (10)*x + (20) = (29),x = 9/10
+1277,(43) + (-44),The result of (43) + (-44) is -1.
+1278,Solve for x: (15)*x = (82),x = 82/15
+1279,Solve for x: x*x = (100),x = -10 or x = 10
+1280,(8) - (-5),The result of (8) - (-5) is 13.
+1281,(16) / (36),The result of (16) / (36) is 0.4444444444444444.
+1282,Solve for x: x*x = (1),x = -1 or x = 1
+1283,Solve for x: (1)*x + (-4) = (-8),x = -4
+1284,Solve for x: x*x = (36),x = -6 or x = 6
+1285,Solve for x: (3)*x + (-6) = (84),x = 30
+1286,Solve for x: x + (19) = (-3),x = -22
+1287,(9) * (38),The result of (9) * (38) is 342.
+1288,Solve for x: x*x = (1),x = -1 or x = 1
+1289,(44) / (24),The result of (44) / (24) is 1.8333333333333333.
+1290,(23) + (-21) + (27),The result of (23) + (-21) + (27) is 29.
+1291,(26) + (-13) + (29) + (-13) + (-13),The result of (26) + (-13) + (29) + (-13) + (-13) is 16.
+1292,(13) + (6) + (5) + (-19),The result of (13) + (6) + (5) + (-19) is 5.
+1293,(36) / (26),The result of (36) / (26) is 1.3846153846153846.
+1294,(40) - (27),The result of (40) - (27) is 13.
+1295,Solve for x: x + (19) = (17),x = -2
+1296,(43) - (43),The result of (43) - (43) is 0.
+1297,(24) + (-27) + (-11) + (-16) + (-1),The result of (24) + (-27) + (-11) + (-16) + (-1) is -31.
+1298,(-30) + (-26) + (-10) + (-8),The result of (-30) + (-26) + (-10) + (-8) is -74.
+1299,Solve for x: (2)*x + (15) = (56),x = 41/2
+1300,(36) + (2),The result of (36) + (2) is 38.
+1301,(30) - (-2),The result of (30) - (-2) is 32.
+1302,Solve for x: (8)*x + (-4) = (91),x = 95/8
+1303,Solve for x: x + (1) = (-2),x = -3
+1304,(23) + (3),The result of (23) + (3) is 26.
+1305,Solve for x: (7)*x + (-10) = (18),x = 4
+1306,Solve for x: (7)*x + (13) = (71),x = 58/7
+1307,Solve for x: x + (17) = (-17),x = -34
+1308,(29) / (41),The result of (29) / (41) is 0.7073170731707317.
+1309,(-30) + (29) + (-30),The result of (-30) + (29) + (-30) is -31.
+1310,Solve for x: (10)*x + (9) = (71),x = 31/5
+1311,(27) - (31),The result of (27) - (31) is -4.
+1312,(-21) + (-25) + (6),The result of (-21) + (-25) + (6) is -40.
+1313,(19) + (-3) + (-20) + (27),The result of (19) + (-3) + (-20) + (27) is 23.
+1314,Solve for x: (6)*x + (-19) = (52),x = 71/6
+1315,Solve for x: (2)*x + (-2) = (15),x = 17/2
+1316,Solve for x: x*x = (16),x = -4 or x = 4
+1317,Solve for x: x + (2) = (-11),x = -13
+1318,(12) + (-23) + (-12),The result of (12) + (-23) + (-12) is -23.
+1319,Solve for x: x*x = (4),x = -2 or x = 2
+1320,Solve for x: (9)*x + (-6) = (68),x = 74/9
+1321,Solve for x: x*x = (16),x = -4 or x = 4
+1322,Solve for x: (9)*x = (23),x = 23/9
+1323,(44) * (-30),The result of (44) * (-30) is -1320.
+1324,Solve for x: (2)*x = (80),x = 40
+1325,(23) - (-30),The result of (23) - (-30) is 53.
+1326,Solve for x: x*x = (16),x = -4 or x = 4
+1327,Solve for x: (10)*x + (-10) = (4),x = 7/5
+1328,Solve for x: x*x = (9),x = -3 or x = 3
+1329,(9) + (-44),The result of (9) + (-44) is -35.
+1330,Solve for x: (9)*x + (7) = (56),x = 49/9
+1331,Solve for x: x*x = (4),x = -2 or x = 2
+1332,Solve for x: x*x = (16),x = -4 or x = 4
+1333,(-28) + (6) + (12) + (-12),The result of (-28) + (6) + (12) + (-12) is -22.
+1334,Solve for x: (3)*x + (-1) = (14),x = 5
+1335,(19) / (30),The result of (19) / (30) is 0.6333333333333333.
+1336,Solve for x: (9)*x + (8) = (26),x = 2
+1337,(-10) + (13) + (7) + (25) + (11),The result of (-10) + (13) + (7) + (25) + (11) is 46.
+1338,Solve for x: (7)*x = (5),x = 5/7
+1339,Solve for x: x*x = (1),x = -1 or x = 1
+1340,Solve for x: (13)*x = (-36),x = -36/13
+1341,(28) + (-26) + (-4),The result of (28) + (-26) + (-4) is -2.
+1342,(-16) + (16) + (24),The result of (-16) + (16) + (24) is 24.
+1343,Solve for x: (6)*x + (-3) = (20),x = 23/6
+1344,Solve for x: x + (1) = (9),x = 8
+1345,(27) / (4),The result of (27) / (4) is 6.75.
+1346,Solve for x: x*x = (9),x = -3 or x = 3
+1347,Solve for x: x*x = (16),x = -4 or x = 4
+1348,Solve for x: x*x = (25),x = -5 or x = 5
+1349,(21) + (47),The result of (21) + (47) is 68.
+1350,Solve for x: (9)*x + (-15) = (-13),x = 2/9
+1351,Solve for x: x + (13) = (10),x = -3
+1352,(-9) + (13) + (-20) + (12) + (-12),The result of (-9) + (13) + (-20) + (12) + (-12) is -16.
+1353,Solve for x: (17)*x = (47),x = 47/17
+1354,Solve for x: x*x = (81),x = -9 or x = 9
+1355,Solve for x: x*x = (4),x = -2 or x = 2
+1356,Solve for x: (11)*x = (-36),x = -36/11
+1357,Solve for x: x + (5) = (19),x = 14
+1358,(43) / (16),The result of (43) / (16) is 2.6875.
+1359,Solve for x: (11)*x = (-85),x = -85/11
+1360,(35) + (-25),The result of (35) + (-25) is 10.
+1361,Solve for x: x + (-14) = (-15),x = -1
+1362,Solve for x: (8)*x = (-12),x = -3/2
+1363,Solve for x: x*x = (81),x = -9 or x = 9
+1364,(27) + (25) + (-29) + (30) + (2),The result of (27) + (25) + (-29) + (30) + (2) is 55.
+1365,Solve for x: x*x = (25),x = -5 or x = 5
+1366,Solve for x: x*x = (1),x = -1 or x = 1
+1367,(29) + (-39),The result of (29) + (-39) is -10.
+1368,Solve for x: x*x = (49),x = -7 or x = 7
+1369,(29) / (15),The result of (29) / (15) is 1.9333333333333333.
+1370,(4) / (28),The result of (4) / (28) is 0.14285714285714285.
+1371,Solve for x: x*x = (36),x = -6 or x = 6
+1372,Solve for x: (9)*x + (15) = (88),x = 73/9
+1373,Solve for x: x + (2) = (-12),x = -14
+1374,(18) - (-4),The result of (18) - (-4) is 22.
+1375,(-22) + (-13) + (3) + (-13) + (1),The result of (-22) + (-13) + (3) + (-13) + (1) is -44.
+1376,(16) + (-27) + (13),The result of (16) + (-27) + (13) is 2.
+1377,(-15) + (-1) + (5) + (20) + (-18),The result of (-15) + (-1) + (5) + (20) + (-18) is -9.
+1378,(43) * (-35),The result of (43) * (-35) is -1505.
+1379,(0) + (-15) + (19) + (22) + (-25),The result of (0) + (-15) + (19) + (22) + (-25) is 1.
+1380,(31) + (-15),The result of (31) + (-15) is 16.
+1381,(3) + (-17),The result of (3) + (-17) is -14.
+1382,Solve for x: (5)*x + (6) = (65),x = 59/5
+1383,Solve for x: (9)*x + (11) = (3),x = -8/9
+1384,Solve for x: (14)*x = (74),x = 37/7
+1385,Solve for x: x + (-5) = (-13),x = -8
+1386,Solve for x: x + (11) = (18),x = 7
+1387,Solve for x: (6)*x + (5) = (73),x = 34/3
+1388,Solve for x: (12)*x = (33),x = 11/4
+1389,Solve for x: x*x = (64),x = -8 or x = 8
+1390,Solve for x: x*x = (1),x = -1 or x = 1
+1391,Solve for x: x*x = (81),x = -9 or x = 9
+1392,(44) - (-20),The result of (44) - (-20) is 64.
+1393,Solve for x: (2)*x + (-18) = (49),x = 67/2
+1394,Solve for x: (2)*x = (-90),x = -45
+1395,(-2) + (28) + (28) + (9) + (-9),The result of (-2) + (28) + (28) + (9) + (-9) is 54.
+1396,Solve for x: x*x = (81),x = -9 or x = 9
+1397,Solve for x: x + (-4) = (9),x = 13
+1398,Solve for x: (2)*x = (-7),x = -7/2
+1399,Solve for x: (17)*x = (-88),x = -88/17
+1400,(31) - (7),The result of (31) - (7) is 24.
+1401,(19) + (-26) + (1) + (1),The result of (19) + (-26) + (1) + (1) is -5.
+1402,Solve for x: x*x = (100),x = -10 or x = 10
+1403,(19) + (-1) + (-17) + (23),The result of (19) + (-1) + (-17) + (23) is 24.
+1404,Solve for x: x + (-2) = (6),x = 8
+1405,(17) + (2) + (-27),The result of (17) + (2) + (-27) is -8.
+1406,Solve for x: x*x = (100),x = -10 or x = 10
+1407,(15) + (17) + (-8) + (-4),The result of (15) + (17) + (-8) + (-4) is 20.
+1408,Solve for x: (9)*x + (-15) = (25),x = 40/9
+1409,Solve for x: x + (8) = (-10),x = -18
+1410,Solve for x: (10)*x = (93),x = 93/10
+1411,Solve for x: x + (-16) = (12),x = 28
+1412,Solve for x: x*x = (16),x = -4 or x = 4
+1413,(1) / (4),The result of (1) / (4) is 0.25.
+1414,Solve for x: (1)*x = (-38),x = -38
+1415,Solve for x: x + (19) = (6),x = -13
+1416,Solve for x: x*x = (16),x = -4 or x = 4
+1417,Solve for x: (4)*x + (-18) = (-8),x = 5/2
+1418,Solve for x: (3)*x + (-10) = (44),x = 18
+1419,Solve for x: x*x = (49),x = -7 or x = 7
+1420,Solve for x: x*x = (100),x = -10 or x = 10
+1421,(25) / (46),The result of (25) / (46) is 0.5434782608695652.
+1422,(30) + (-2) + (-4),The result of (30) + (-2) + (-4) is 24.
+1423,(48) + (10),The result of (48) + (10) is 58.
+1424,(27) * (19),The result of (27) * (19) is 513.
+1425,Solve for x: (5)*x = (-48),x = -48/5
+1426,(-22) + (-15) + (10) + (17) + (-6),The result of (-22) + (-15) + (10) + (17) + (-6) is -16.
+1427,Solve for x: x*x = (49),x = -7 or x = 7
+1428,(-9) + (21) + (-27) + (-21),The result of (-9) + (21) + (-27) + (-21) is -36.
+1429,Solve for x: x*x = (36),x = -6 or x = 6
+1430,Solve for x: x + (-20) = (1),x = 21
+1431,Solve for x: (13)*x = (79),x = 79/13
+1432,Solve for x: x + (18) = (-6),x = -24
+1433,Solve for x: x*x = (1),x = -1 or x = 1
+1434,(-1) + (-13) + (9) + (30) + (-27),The result of (-1) + (-13) + (9) + (30) + (-27) is -2.
+1435,(29) + (-5) + (8) + (13) + (24),The result of (29) + (-5) + (8) + (13) + (24) is 69.
+1436,(47) * (18),The result of (47) * (18) is 846.
+1437,(40) - (-23),The result of (40) - (-23) is 63.
+1438,Solve for x: x*x = (1),x = -1 or x = 1
+1439,Solve for x: (10)*x = (70),x = 7
+1440,Solve for x: (7)*x + (-2) = (48),x = 50/7
+1441,(-25) + (28) + (12),The result of (-25) + (28) + (12) is 15.
+1442,Solve for x: (10)*x + (-19) = (11),x = 3
+1443,Solve for x: x*x = (4),x = -2 or x = 2
+1444,(-26) + (25) + (-10) + (-22),The result of (-26) + (25) + (-10) + (-22) is -33.
+1445,Solve for x: x + (-17) = (-2),x = 15
+1446,Solve for x: x + (14) = (0),x = -14
+1447,Solve for x: x*x = (36),x = -6 or x = 6
+1448,(20) + (-19) + (-3) + (-27) + (-13),The result of (20) + (-19) + (-3) + (-27) + (-13) is -42.
+1449,Solve for x: x*x = (81),x = -9 or x = 9
+1450,Solve for x: x + (-2) = (7),x = 9
+1451,(10) / (6),The result of (10) / (6) is 1.6666666666666667.
+1452,(14) / (29),The result of (14) / (29) is 0.4827586206896552.
+1453,Solve for x: x*x = (16),x = -4 or x = 4
+1454,Solve for x: x + (-9) = (15),x = 24
+1455,(-9) + (-7) + (-20),The result of (-9) + (-7) + (-20) is -36.
+1456,Solve for x: (5)*x + (17) = (2),x = -3
+1457,(-6) + (-9) + (15),The result of (-6) + (-9) + (15) is 0.
+1458,Solve for x: x*x = (81),x = -9 or x = 9
+1459,Solve for x: x + (6) = (-13),x = -19
+1460,Solve for x: x*x = (81),x = -9 or x = 9
+1461,Solve for x: (1)*x + (-9) = (88),x = 97
+1462,Solve for x: (10)*x = (-33),x = -33/10
+1463,Solve for x: x*x = (25),x = -5 or x = 5
+1464,Solve for x: (3)*x + (8) = (23),x = 5
+1465,Solve for x: (15)*x = (42),x = 14/5
+1466,Solve for x: x*x = (16),x = -4 or x = 4
+1467,(9) + (3) + (-2),The result of (9) + (3) + (-2) is 10.
+1468,(25) + (-10) + (-17),The result of (25) + (-10) + (-17) is -2.
+1469,(24) - (41),The result of (24) - (41) is -17.
+1470,(33) * (-50),The result of (33) * (-50) is -1650.
+1471,Solve for x: (10)*x + (-12) = (68),x = 8
+1472,(30) + (24) + (-25) + (19),The result of (30) + (24) + (-25) + (19) is 48.
+1473,Solve for x: x + (5) = (-13),x = -18
+1474,Solve for x: (9)*x + (15) = (98),x = 83/9
+1475,Solve for x: (13)*x = (28),x = 28/13
+1476,Solve for x: (13)*x = (46),x = 46/13
+1477,Solve for x: x + (-14) = (-6),x = 8
+1478,(24) - (-4),The result of (24) - (-4) is 28.
+1479,(-10) + (6) + (-16) + (-20) + (27),The result of (-10) + (6) + (-16) + (-20) + (27) is -13.
+1480,Solve for x: x + (2) = (4),x = 2
+1481,(-1) + (18) + (-12) + (9),The result of (-1) + (18) + (-12) + (9) is 14.
+1482,Solve for x: x*x = (100),x = -10 or x = 10
+1483,Solve for x: (5)*x + (12) = (-8),x = -4
+1484,Solve for x: (3)*x + (-7) = (57),x = 64/3
+1485,Solve for x: (8)*x + (-8) = (-15),x = -7/8
+1486,Solve for x: (16)*x = (-53),x = -53/16
+1487,Solve for x: (12)*x = (10),x = 5/6
+1488,Solve for x: x + (12) = (7),x = -5
+1489,Solve for x: x*x = (16),x = -4 or x = 4
+1490,Solve for x: x*x = (4),x = -2 or x = 2
+1491,(-19) + (-26) + (-18) + (-3),The result of (-19) + (-26) + (-18) + (-3) is -66.
+1492,Solve for x: (7)*x + (-10) = (31),x = 41/7
+1493,(12) + (22) + (0) + (-25) + (-14),The result of (12) + (22) + (0) + (-25) + (-14) is -5.
+1494,Solve for x: x*x = (81),x = -9 or x = 9
+1495,(11) * (10),The result of (11) * (10) is 110.
+1496,Solve for x: (6)*x + (9) = (-4),x = -13/6
+1497,Solve for x: x*x = (16),x = -4 or x = 4
+1498,(-12) + (21) + (23) + (6) + (22),The result of (-12) + (21) + (23) + (6) + (22) is 60.
+1499,(-28) + (-21) + (-22),The result of (-28) + (-21) + (-22) is -71.
