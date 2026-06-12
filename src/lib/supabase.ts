@@ -40,6 +40,11 @@ create table if not exists profiles (
 alter table profiles
   add column if not exists temperature numeric default 1 check (temperature between 0.01 and 1000);
 
+alter table profiles
+  add column if not exists top_k integer default 50 check (top_k between 1 and 50000),
+  add column if not exists repetition_penalty numeric default 1.15
+    check (repetition_penalty between 1 and 4);
+
 create table if not exists chat_sessions (
   id uuid primary key default gen_random_uuid(),
   user_id uuid references auth.users(id) on delete cascade,

@@ -157,6 +157,7 @@ class ThanatosForCausalLM(PreTrainedModel):
         input_ids: str | torch.Tensor | None = None,
         temperature: float = 1.0,
         max_new_tokens: int = 1024,
+        top_k: int = 50,
         repetition_penalty: float = 1.15,
         tokenizer: Any | None = None,
         **_: Any,
@@ -166,6 +167,7 @@ class ThanatosForCausalLM(PreTrainedModel):
                 input_ids.to(self.device),
                 temperature,
                 max_new_tokens,
+                top_k,
                 repetition_penalty,
             )
 
@@ -185,6 +187,7 @@ class ThanatosForCausalLM(PreTrainedModel):
             seed,
             temperature,
             max_new_tokens,
+            top_k,
             repetition_penalty,
         )
         return active_tokenizer.decode(
@@ -197,6 +200,7 @@ class ThanatosForCausalLM(PreTrainedModel):
         input_ids: torch.Tensor,
         temperature: float,
         max_new_tokens: int,
+        top_k: int,
         repetition_penalty: float,
     ) -> torch.Tensor:
         self.eval()
@@ -204,6 +208,7 @@ class ThanatosForCausalLM(PreTrainedModel):
         all_tokens = input_ids.clone()
         temperature = max(float(temperature), 0.01)
         repetition_penalty = max(float(repetition_penalty), 1.0)
+        top_k = min(self.config.vocab_size, max(1, int(top_k)))
 
         for _ in range(int(max_new_tokens)):
             logits = self(context).logits[:, -1, :].float()
@@ -214,7 +219,7 @@ class ThanatosForCausalLM(PreTrainedModel):
                     logits[0, token_id] /= repetition_penalty
 
             logits = logits / temperature
-            top_logits, top_indices = torch.topk(logits, 50, dim=-1)
+            top_logits, top_indices = torch.topk(logits, top_k, dim=-1)
             probabilities = torch.softmax(top_logits, dim=-1)
             sampled_index = torch.multinomial(probabilities, 1)
             next_token = top_indices.gather(1, sampled_index)

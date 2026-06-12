@@ -3,6 +3,8 @@ import { createPurcarReply } from "./purcarBrain";
 type GenerateOptions = {
   creativity?: number;
   temperature?: number;
+  topK?: number;
+  repetitionPenalty?: number;
 };
 
 type GenerateResponse = {
@@ -83,7 +85,8 @@ export async function generatePurcarReply(prompt: string, options: GenerateOptio
           temperature: options.temperature ?? 1,
           creativity: options.creativity ?? 50,
           max_new_tokens: 48,
-          repetition_penalty: 1.15,
+          top_k: options.topK ?? 50,
+          repetition_penalty: options.repetitionPenalty ?? 1.15,
         }),
         headers: {
           "Content-Type": "application/json",

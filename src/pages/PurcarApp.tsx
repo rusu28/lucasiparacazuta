@@ -26,6 +26,8 @@ import type { ChatMessage, ChatSession } from "../lib/types";
 
 const creativityKey = "reformone-purcar-creativity";
 const temperatureKey = "reformone-purcar-temperature";
+const topKKey = "reformone-purcar-top-k";
+const repetitionPenaltyKey = "reformone-purcar-repetition-penalty";
 const usageKey = "reformone-purcar-token-window";
 const sessionsKeyPrefix = "reformone-purcar-chat-sessions";
 const memoryEnabledKey = "reformone-purcar-memory-enabled";
@@ -52,6 +54,8 @@ type UserProfile = {
   role: "admin" | "organizer" | "student" | "member";
   plan: "free" | "plus" | "pro" | "elite";
   creativity: number;
+  top_k: number;
+  repetition_penalty: number;
   email_verified: boolean;
 };
 
@@ -140,6 +144,32 @@ function clampTemperature(value: number) {
 
 function loadLocalTemperature() {
   return clampTemperature(Number(localStorage.getItem(temperatureKey) || 1));
+}
+
+function clampTopK(value: number) {
+  if (!Number.isFinite(value)) {
+    return 50;
+  }
+
+  return Math.min(50_000, Math.max(1, Math.round(value)));
+}
+
+function loadLocalTopK() {
+  return clampTopK(Number(localStorage.getItem(topKKey) || 50));
+}
+
+function clampRepetitionPenalty(value: number) {
+  if (!Number.isFinite(value)) {
+    return 1.15;
+  }
+
+  return Number(Math.min(4, Math.max(1, value)).toFixed(2));
+}
+
+function loadLocalRepetitionPenalty() {
+  return clampRepetitionPenalty(
+    Number(localStorage.getItem(repetitionPenaltyKey) || 1.15),
+  );
 }
 
 function normalizeTokenWindow(data?: TokenUsage | null): TokenUsage {
@@ -321,6 +351,8 @@ function profileFromUser(user: User, creativity: number): UserProfile {
     role: isHardcodedAdmin ? "admin" : "student",
     plan: isEliteSeed || isHardcodedAdmin ? "elite" : "free",
     creativity,
+    top_k: loadLocalTopK(),
+    repetition_penalty: loadLocalRepetitionPenalty(),
     email_verified:
       isHardcodedAdmin ||
       user.user_metadata?.purcar_email_verified === true,
@@ -335,6 +367,10 @@ export function PurcarApp() {
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [localCreativity, setLocalCreativity] = useState(() => loadLocalCreativity());
   const [localTemperature, setLocalTemperature] = useState(() => loadLocalTemperature());
+  const [localTopK, setLocalTopK] = useState(() => loadLocalTopK());
+  const [localRepetitionPenalty, setLocalRepetitionPenalty] = useState(() =>
+    loadLocalRepetitionPenalty(),
+  );
   const [authOpen, setAuthOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [passwordOpen, setPasswordOpen] = useState(false);
@@ -373,6 +409,8 @@ export function PurcarApp() {
   const isDemoElite = profile?.id === "demo-elite";
   const creativity = profile?.creativity ?? localCreativity;
   const temperature = localTemperature;
+  const topK = localTopK;
+  const repetitionPenalty = localRepetitionPenalty;
   const isAdmin = profile?.role === "admin" || isHardcodedAdminEmail(profile?.email);
   const tokenLimit = isAuthenticated
     ? profile?.email_verified
@@ -413,6 +451,14 @@ export function PurcarApp() {
   useEffect(() => {
     localStorage.setItem(temperatureKey, String(localTemperature));
   }, [localTemperature]);
+
+  useEffect(() => {
+    localStorage.setItem(topKKey, String(localTopK));
+  }, [localTopK]);
+
+  useEffect(() => {
+    localStorage.setItem(repetitionPenaltyKey, String(localRepetitionPenalty));
+  }, [localRepetitionPenalty]);
 
   useEffect(() => {
     saveLocalSessions(userId, sessions);
@@ -558,7 +604,9 @@ export function PurcarApp() {
 
     const { data, error } = await supabase
       .from("profiles")
-      .select("id,email,username,display_name,role,plan,creativity,temperature")
+      .select(
+        "id,email,username,display_name,role,plan,creativity,temperature,top_k,repetition_penalty",
+      )
       .eq("id", user.id)
       .maybeSingle();
 
@@ -578,6 +626,8 @@ export function PurcarApp() {
         role: isHardcodedAdmin ? "admin" : data.role || "student",
         plan: isHardcodedAdmin ? "elite" : data.plan || "free",
         creativity: data.creativity ?? 50,
+        top_k: clampTopK(data.top_k ?? 50),
+        repetition_penalty: clampRepetitionPenalty(data.repetition_penalty ?? 1.15),
         email_verified:
           isHardcodedAdmin ||
           user.user_metadata?.purcar_email_verified === true,
@@ -585,6 +635,8 @@ export function PurcarApp() {
       setProfile(nextProfile);
       setLocalCreativity(nextProfile.creativity);
       setLocalTemperature(clampTemperature(data.temperature ?? 1));
+      setLocalTopK(nextProfile.top_k);
+      setLocalRepetitionPenalty(nextProfile.repetition_penalty);
       cloudSchemaReady.current = true;
       setSyncStatus("Cloud sync active");
       return true;
@@ -600,8 +652,13 @@ export function PurcarApp() {
         role: "student",
         plan: isEliteSeed ? "elite" : "free",
         creativity: localCreativity,
+        temperature: localTemperature,
+        top_k: localTopK,
+        repetition_penalty: localRepetitionPenalty,
       })
-      .select("id,email,username,display_name,role,plan,creativity,temperature")
+      .select(
+        "id,email,username,display_name,role,plan,creativity,temperature,top_k,repetition_penalty",
+      )
       .single();
 
     if (insertError) {
@@ -618,11 +675,19 @@ export function PurcarApp() {
       role: isHardcodedAdminEmail(inserted.email) ? "admin" : inserted.role || "student",
       plan: isHardcodedAdminEmail(inserted.email) ? "elite" : inserted.plan || "free",
       creativity: inserted.creativity ?? localCreativity,
+      top_k: clampTopK(inserted.top_k ?? localTopK),
+      repetition_penalty: clampRepetitionPenalty(
+        inserted.repetition_penalty ?? localRepetitionPenalty,
+      ),
       email_verified:
         isHardcodedAdminEmail(inserted.email) ||
         user.user_metadata?.purcar_email_verified === true,
     });
     setLocalTemperature(clampTemperature(inserted.temperature ?? localTemperature));
+    setLocalTopK(clampTopK(inserted.top_k ?? localTopK));
+    setLocalRepetitionPenalty(
+      clampRepetitionPenalty(inserted.repetition_penalty ?? localRepetitionPenalty),
+    );
     cloudSchemaReady.current = true;
     setSyncStatus("Cloud sync active");
     return true;
@@ -967,7 +1032,12 @@ export function PurcarApp() {
       memoryEnabled
         ? formatChatMemory(session.messages, trimmed, memoryCount)
         : trimmed;
-    const reply = await generatePurcarReply(modelPrompt, { creativity, temperature });
+    const reply = await generatePurcarReply(modelPrompt, {
+      creativity,
+      temperature,
+      topK,
+      repetitionPenalty,
+    });
     const assistantMessage: ChatMessage = {
       id: uid(),
       role: "assistant",
@@ -1001,6 +1071,8 @@ export function PurcarApp() {
         role: "student",
         plan: "elite",
         creativity: localCreativity,
+        top_k: localTopK,
+        repetition_penalty: localRepetitionPenalty,
         email_verified: true,
       });
       setSessions([]);
@@ -1200,6 +1272,42 @@ export function PurcarApp() {
         ? "High temperature: answers can become more random."
         : "Temperature saved locally",
     );
+  }
+
+  async function saveTopK(nextValue: number) {
+    const bounded = clampTopK(nextValue);
+    setLocalTopK(bounded);
+
+    if (supabase && profile && !isDemoElite && cloudSchemaReady.current === true) {
+      const { error } = await supabase
+        .from("profiles")
+        .update({ top_k: bounded })
+        .eq("id", profile.id);
+      if (error) {
+        setSyncStatus("Top K saved on this device.");
+        return;
+      }
+    }
+
+    setSyncStatus("Top K saved");
+  }
+
+  async function saveRepetitionPenalty(nextValue: number) {
+    const bounded = clampRepetitionPenalty(nextValue);
+    setLocalRepetitionPenalty(bounded);
+
+    if (supabase && profile && !isDemoElite && cloudSchemaReady.current === true) {
+      const { error } = await supabase
+        .from("profiles")
+        .update({ repetition_penalty: bounded })
+        .eq("id", profile.id);
+      if (error) {
+        setSyncStatus("Repetition penalty saved on this device.");
+        return;
+      }
+    }
+
+    setSyncStatus("Repetition penalty saved");
   }
 
   async function updatePassword() {
@@ -1644,6 +1752,36 @@ export function PurcarApp() {
                 Above temperature 1.5, answers can get too random and should be verified.
               </p>
             )}
+            <label className="zai-range-label">
+              Top K
+              <span>{topK} candidate tokens</span>
+              <input
+                max={50_000}
+                min={1}
+                step={1}
+                type="number"
+                value={topK}
+                onChange={(event) => void saveTopK(Number(event.target.value))}
+                onBlur={(event) => void saveTopK(Number(event.target.value))}
+              />
+            </label>
+            <label className="zai-range-label">
+              Repetition penalty
+              <span>{repetitionPenalty} | 1 disables the penalty</span>
+              <input
+                max={4}
+                min={1}
+                step={0.01}
+                type="number"
+                value={repetitionPenalty}
+                onChange={(event) =>
+                  void saveRepetitionPenalty(Number(event.target.value))
+                }
+                onBlur={(event) =>
+                  void saveRepetitionPenalty(Number(event.target.value))
+                }
+              />
+            </label>
             <div className="zai-beta-settings">
               <div>
                 <strong>Conversation memory</strong>

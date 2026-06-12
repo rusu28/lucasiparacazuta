@@ -23,6 +23,7 @@ class GenerateRequest(BaseModel):
     input: str = Field(min_length=1, max_length=50_000)
     temperature: float = Field(default=1.0, ge=0.01, le=1000)
     max_new_tokens: int = Field(default=48, ge=1, le=256)
+    top_k: int = Field(default=50, ge=1, le=50_000)
     repetition_penalty: float = Field(default=1.15, ge=1.0, le=4.0)
 
 
@@ -123,6 +124,7 @@ def generate(request: GenerateRequest) -> dict[str, str]:
             tokenizer=tokenizer,
             temperature=request.temperature,
             max_new_tokens=request.max_new_tokens,
+            top_k=request.top_k,
             repetition_penalty=request.repetition_penalty,
         )
         return {"reply": clean_reply(str(output))}
