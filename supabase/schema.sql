@@ -71,16 +71,58 @@ create table if not exists app_audit_logs (
   created_at timestamptz default now()
 );
 
-create or replace function is_admin(uid uuid)
+create or replace function public.is_admin(uid uuid)
 returns boolean
 language sql
 stable
+security definer
+set search_path = public
 as $$
   select exists (
-    select 1 from profiles
+    select 1 from public.profiles
     where id = uid and role = 'admin'
   );
 $$;
+
+create or replace function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  insert into public.profiles (
+    id,
+    email,
+    username,
+    display_name,
+    role,
+    plan
+  )
+  values (
+    new.id,
+    new.email,
+    nullif(
+      lower(regexp_replace(coalesce(new.raw_user_meta_data->>'username', split_part(new.email, '@', 1)), '[^a-zA-Z0-9_]+', '_', 'g'))
+        || '_' || right(new.id::text, 6),
+      ''
+    ),
+    coalesce(new.raw_user_meta_data->>'display_name', split_part(new.email, '@', 1), 'Student'),
+    'student',
+    'free'
+  )
+  on conflict (id) do update set
+    email = excluded.email,
+    display_name = coalesce(public.profiles.display_name, excluded.display_name);
+
+  return new;
+end;
+$$;
+
+drop trigger if exists on_auth_user_created on auth.users;
+create trigger on_auth_user_created
+after insert or update of email on auth.users
+for each row execute procedure public.handle_new_user();
 
 alter table profiles enable row level security;
 alter table chat_sessions enable row level security;
@@ -90,6 +132,17 @@ alter table support_threads enable row level security;
 alter table support_messages enable row level security;
 alter table presentation_overrides enable row level security;
 alter table app_audit_logs enable row level security;
+
+grant usage on schema public to anon, authenticated;
+grant select, insert, update, delete on public.profiles to authenticated;
+grant select, insert, update, delete on public.chat_sessions to authenticated;
+grant select, insert, update, delete on public.chat_messages to authenticated;
+grant select, insert, update, delete on public.token_usage_windows to authenticated;
+grant select, insert, update, delete on public.support_threads to authenticated;
+grant select, insert, update, delete on public.support_messages to authenticated;
+grant select on public.presentation_overrides to anon, authenticated;
+grant insert, update, delete on public.presentation_overrides to authenticated;
+grant insert, select on public.app_audit_logs to authenticated;
 
 drop policy if exists "profiles_select_own" on profiles;
 create policy "profiles_select_own" on profiles

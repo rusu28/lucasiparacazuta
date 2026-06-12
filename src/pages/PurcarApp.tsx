@@ -13,6 +13,7 @@ import {
   Plus,
   Save,
   Send,
+  Settings2,
   ShieldCheck,
   Trash2,
   UserCircle,
@@ -29,9 +30,10 @@ const usageKey = "reformone-purcar-token-window";
 const sessionsKeyPrefix = "reformone-purcar-chat-sessions";
 const memoryEnabledKey = "reformone-purcar-memory-enabled";
 const memoryCountKey = "reformone-purcar-memory-count";
-const guestTokenLimit = 5000;
-const accountTokenLimit = 10000;
-const usageWindowMs = 6 * 60 * 60 * 1000;
+const guestTokenLimit = 25_000;
+const accountTokenLimit = 100_000;
+const verifiedAccountTokenLimit = 150_000;
+const usageWindowMs = 7 * 24 * 60 * 60 * 1000;
 const demoEliteEmail =
   (import.meta.env.VITE_DEMO_ELITE_EMAIL as string | undefined) ||
   "proiect+antre.elite@lowkai.xyz";
@@ -50,6 +52,7 @@ type UserProfile = {
   role: "admin" | "organizer" | "student" | "member";
   plan: "free" | "plus" | "pro" | "elite";
   creativity: number;
+  email_verified: boolean;
 };
 
 type AuthMode = "signin" | "signup";
@@ -58,6 +61,7 @@ type TokenUsage = {
   windowStartedAt: string;
   tokensUsed: number;
 };
+type CloudSaveState = "local" | "saving" | "saved" | "error";
 
 function now() {
   return new Date().toISOString();
@@ -147,9 +151,15 @@ function normalizeTokenWindow(data?: TokenUsage | null): TokenUsage {
     : candidate;
 }
 
-function loadLocalTokenUsage() {
+function tokenUsageStorageKey(ownerId: string | null) {
+  return `${usageKey}:${ownerId || "guest"}`;
+}
+
+function loadLocalTokenUsage(ownerId: string | null = null) {
   try {
-    const raw = localStorage.getItem(usageKey);
+    const raw =
+      localStorage.getItem(tokenUsageStorageKey(ownerId)) ||
+      (ownerId ? null : localStorage.getItem(usageKey));
     return normalizeTokenWindow(raw ? (JSON.parse(raw) as TokenUsage) : null);
   } catch {
     return normalizeTokenWindow(null);
@@ -162,7 +172,7 @@ function loadMemoryEnabled() {
 
 function loadMemoryCount() {
   const raw = Number(localStorage.getItem(memoryCountKey));
-  return Number.isFinite(raw) ? Math.min(40, Math.max(2, Math.round(raw))) : 8;
+  return Number.isFinite(raw) ? Math.min(200, Math.max(1, Math.round(raw))) : 12;
 }
 
 function formatChatMemory(messages: ChatMessage[], nextInput: string, messageCount: number) {
@@ -311,6 +321,9 @@ function profileFromUser(user: User, creativity: number): UserProfile {
     role: isHardcodedAdmin ? "admin" : "student",
     plan: isEliteSeed || isHardcodedAdmin ? "elite" : "free",
     creativity,
+    email_verified:
+      isHardcodedAdmin ||
+      user.user_metadata?.purcar_email_verified === true,
   };
 }
 
@@ -343,10 +356,13 @@ export function PurcarApp() {
   const [tokenUsage, setTokenUsage] = useState<TokenUsage>(() => loadLocalTokenUsage());
   const [memoryEnabled, setMemoryEnabled] = useState(() => loadMemoryEnabled());
   const [memoryCount, setMemoryCount] = useState(() => loadMemoryCount());
+  const [cloudSaveState, setCloudSaveState] = useState<CloudSaveState>("local");
   const [syncStatus, setSyncStatus] = useState(
     isSupabaseConfigured ? "Checking session..." : "Supabase not configured",
   );
   const feedRef = useRef<HTMLDivElement | null>(null);
+  const cloudSyncQueue = useRef(Promise.resolve());
+  const cloudSchemaReady = useRef<boolean | null>(null);
 
   const activeSession = useMemo(
     () => sessions.find((session) => session.id === activeId),
@@ -358,7 +374,11 @@ export function PurcarApp() {
   const creativity = profile?.creativity ?? localCreativity;
   const temperature = localTemperature;
   const isAdmin = profile?.role === "admin" || isHardcodedAdminEmail(profile?.email);
-  const tokenLimit = isAuthenticated ? accountTokenLimit : guestTokenLimit;
+  const tokenLimit = isAuthenticated
+    ? profile?.email_verified
+      ? verifiedAccountTokenLimit
+      : accountTokenLimit
+    : guestTokenLimit;
   const avatarText = initialsFrom(
     profile?.display_name || profile?.username || profile?.email,
   );
@@ -372,8 +392,19 @@ export function PurcarApp() {
     ? Math.max(0, Math.min(100, (tokensLeft / tokenLimit) * 100))
     : 100;
   const tokenTitle = Number.isFinite(tokensLeft)
-    ? `${tokensLeft} tokens left in this 6-hour window. Chats auto-save when you are signed in.`
+    ? `${tokensLeft.toLocaleString()} tokens left this week.`
     : "Unlimited tokens on this plan. Chats auto-save when you are signed in.";
+  const saveStateLabel = !isAuthenticated
+    ? "Saved on this device"
+    : cloudSaveState === "saving"
+      ? "Saving to cloud..."
+      : cloudSaveState === "saved"
+        ? "Saved to cloud"
+        : cloudSaveState === "error"
+          ? cloudSchemaReady.current === false
+            ? "Saved locally, cloud setup required"
+            : "Saved locally, cloud retry pending"
+          : "Saved locally";
 
   useEffect(() => {
     localStorage.setItem(creativityKey, String(localCreativity));
@@ -394,6 +425,27 @@ export function PurcarApp() {
   useEffect(() => {
     localStorage.setItem(memoryCountKey, String(memoryCount));
   }, [memoryCount]);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      return;
+    }
+
+    const retryCloudSync = () => {
+      if (document.visibilityState === "visible" && navigator.onLine) {
+        for (const session of sessions) {
+          queueSessionSync(session);
+        }
+      }
+    };
+
+    window.addEventListener("online", retryCloudSync);
+    document.addEventListener("visibilitychange", retryCloudSync);
+    return () => {
+      window.removeEventListener("online", retryCloudSync);
+      document.removeEventListener("visibilitychange", retryCloudSync);
+    };
+  }, [isAuthenticated, sessions, userId]);
 
   useEffect(() => {
     feedRef.current?.scrollTo({
@@ -434,12 +486,16 @@ export function PurcarApp() {
             ? current
             : guestSessions[0]?.id,
         );
-        setTokenUsage(loadLocalTokenUsage());
+        setTokenUsage(loadLocalTokenUsage(null));
+        setCloudSaveState("local");
         setSyncStatus("Sign in for saved chats");
         return;
       }
 
-      const cachedSessions = loadLocalSessions(user.id);
+      const cachedSessions = mergeSessions(
+        loadLocalSessions(user.id),
+        loadLocalSessions(null),
+      );
       setUserId(user.id);
       setProfile(profileFromUser(user, localCreativity));
       if (cachedSessions.length) {
@@ -451,8 +507,15 @@ export function PurcarApp() {
         );
       }
       setSyncStatus("Session active. Syncing profile...");
-      await ensureProfile(user);
-      await loadCloudSessions(user.id, cachedSessions);
+      const profileReady = await ensureProfile(user);
+      if (!profileReady) {
+        setCloudSaveState("error");
+        return;
+      }
+      const mergedSessions = await loadCloudSessions(user.id, cachedSessions);
+      for (const session of mergedSessions) {
+        queueSessionSync(session, user.id);
+      }
       await loadCloudTokenUsage(user.id);
     }
 
@@ -478,7 +541,7 @@ export function PurcarApp() {
 
   async function ensureProfile(user: User) {
     if (!supabase) {
-      return;
+      return false;
     }
 
     const fallbackName =
@@ -495,13 +558,14 @@ export function PurcarApp() {
 
     const { data, error } = await supabase
       .from("profiles")
-      .select("id,email,username,display_name,role,plan,creativity")
+      .select("id,email,username,display_name,role,plan,creativity,temperature")
       .eq("id", user.id)
       .maybeSingle();
 
     if (error) {
+      cloudSchemaReady.current = false;
       setSyncStatus(friendlySchemaStatus(error, "Profile could not be loaded."));
-      return;
+      return false;
     }
 
     if (data) {
@@ -514,11 +578,16 @@ export function PurcarApp() {
         role: isHardcodedAdmin ? "admin" : data.role || "student",
         plan: isHardcodedAdmin ? "elite" : data.plan || "free",
         creativity: data.creativity ?? 50,
+        email_verified:
+          isHardcodedAdmin ||
+          user.user_metadata?.purcar_email_verified === true,
       } as UserProfile;
       setProfile(nextProfile);
       setLocalCreativity(nextProfile.creativity);
+      setLocalTemperature(clampTemperature(data.temperature ?? 1));
+      cloudSchemaReady.current = true;
       setSyncStatus("Cloud sync active");
-      return;
+      return true;
     }
 
     const { data: inserted, error: insertError } = await supabase
@@ -532,12 +601,13 @@ export function PurcarApp() {
         plan: isEliteSeed ? "elite" : "free",
         creativity: localCreativity,
       })
-      .select("id,email,username,display_name,role,plan,creativity")
+      .select("id,email,username,display_name,role,plan,creativity,temperature")
       .single();
 
     if (insertError) {
+      cloudSchemaReady.current = false;
       setSyncStatus(friendlySchemaStatus(insertError, "Profile could not be created."));
-      return;
+      return false;
     }
 
     setProfile({
@@ -548,13 +618,19 @@ export function PurcarApp() {
       role: isHardcodedAdminEmail(inserted.email) ? "admin" : inserted.role || "student",
       plan: isHardcodedAdminEmail(inserted.email) ? "elite" : inserted.plan || "free",
       creativity: inserted.creativity ?? localCreativity,
+      email_verified:
+        isHardcodedAdminEmail(inserted.email) ||
+        user.user_metadata?.purcar_email_verified === true,
     });
+    setLocalTemperature(clampTemperature(inserted.temperature ?? localTemperature));
+    cloudSchemaReady.current = true;
     setSyncStatus("Cloud sync active");
+    return true;
   }
 
   async function loadCloudSessions(ownerId: string, cachedSessions = loadLocalSessions(ownerId)) {
     if (!supabase) {
-      return;
+      return cachedSessions;
     }
 
     const { data: sessionRows, error } = await supabase
@@ -573,7 +649,7 @@ export function PurcarApp() {
         );
       }
       setSyncStatus(friendlySchemaStatus(error, "Chats could not be loaded."));
-      return;
+      return cachedSessions;
     }
 
     if (!sessionRows?.length) {
@@ -584,7 +660,7 @@ export function PurcarApp() {
           : cachedSessions[0]?.id,
       );
       setSyncStatus("Cloud sync active");
-      return;
+      return cachedSessions;
     }
 
     const ids = sessionRows.map((session) => session.id);
@@ -623,6 +699,8 @@ export function PurcarApp() {
     );
     saveLocalSessions(ownerId, merged);
     setSyncStatus("Cloud sync active");
+    setCloudSaveState("saved");
+    return merged;
   }
 
   async function loadCloudTokenUsage(ownerId: string) {
@@ -652,50 +730,41 @@ export function PurcarApp() {
   async function createChatSession(title = "New chat") {
     const session = createSession(title);
 
-    if (supabase && userId && !isDemoElite && isUuid(userId)) {
-      const { error } = await supabase.from("chat_sessions").insert({
-        id: session.id,
-        user_id: userId,
-        title: session.title,
-        created_at: session.createdAt,
-        updated_at: session.updatedAt,
-      });
-
-      if (error) {
-        setSyncStatus(friendlySchemaStatus(error, "Could not create the chat."));
-        return null;
-      }
-    }
-
     setSessions((current) => upsertSession(current, session));
     setActiveId(session.id);
-    if (!isAuthenticated) {
-      setSyncStatus("Guest chat: not saved after refresh.");
+    if (isAuthenticated) {
+      queueSessionSync(session);
+    } else {
+      setCloudSaveState("local");
+      setSyncStatus("Guest chats are saved on this device");
     }
     return session;
   }
 
-  async function syncSessionToCloud(session: ChatSession) {
-    if (!supabase || !userId || isDemoElite || !isUuid(session.id)) {
-      return;
+  async function syncSessionToCloud(session: ChatSession, ownerId = userId) {
+    if (!supabase || !ownerId || isDemoElite || !isUuid(session.id) || !isUuid(ownerId)) {
+      return false;
     }
 
+    setCloudSaveState("saving");
     const { error: sessionError } = await supabase.from("chat_sessions").upsert({
       id: session.id,
-      user_id: userId,
+      user_id: ownerId,
       title: session.title,
       created_at: session.createdAt,
       updated_at: session.updatedAt,
-    });
+    }, { onConflict: "id" });
 
     if (sessionError) {
       setSyncStatus(friendlySchemaStatus(sessionError, "Could not save the chat."));
-      return;
+      setCloudSaveState("error");
+      return false;
     }
 
     if (!session.messages.length) {
       setSyncStatus("Cloud sync active");
-      return;
+      setCloudSaveState("saved");
+      return true;
     }
 
     const { error: messageError } = await supabase.from("chat_messages").upsert(
@@ -709,6 +778,7 @@ export function PurcarApp() {
           created_at: message.createdAt,
           training_eligible: true,
         })),
+      { onConflict: "id" },
     );
 
     setSyncStatus(
@@ -716,6 +786,19 @@ export function PurcarApp() {
         ? friendlySchemaStatus(messageError, "Could not save messages.")
         : "Cloud sync active",
     );
+    setCloudSaveState(messageError ? "error" : "saved");
+    return !messageError;
+  }
+
+  function queueSessionSync(session: ChatSession, ownerId = userId) {
+    if (!supabase || !ownerId || isDemoElite || cloudSchemaReady.current === false) {
+      return;
+    }
+
+    cloudSyncQueue.current = cloudSyncQueue.current
+      .catch(() => undefined)
+      .then(() => syncSessionToCloud(session, ownerId))
+      .then(() => undefined);
   }
 
   async function registerTokenUsage(tokenCount: number) {
@@ -726,10 +809,11 @@ export function PurcarApp() {
     const startedFallback = new Date().toISOString();
 
     if (!supabase || isDemoElite || !userId || !isAuthenticated) {
-      const windowData = normalizeTokenWindow(loadLocalTokenUsage());
+      const usageOwnerId = isAuthenticated ? userId : null;
+      const windowData = normalizeTokenWindow(loadLocalTokenUsage(usageOwnerId));
 
       if (windowData.tokensUsed + tokenCount > tokenLimit) {
-        setSyncStatus(`${tokenLimit} token limit / 6 hours`);
+        setSyncStatus(`${tokenLimit.toLocaleString()} token weekly limit reached`);
         setTokenUsage(windowData);
         return false;
       }
@@ -738,7 +822,7 @@ export function PurcarApp() {
         windowStartedAt: windowData.windowStartedAt,
         tokensUsed: windowData.tokensUsed + tokenCount,
       };
-      localStorage.setItem(usageKey, JSON.stringify(nextUsage));
+      localStorage.setItem(tokenUsageStorageKey(usageOwnerId), JSON.stringify(nextUsage));
       setTokenUsage(nextUsage);
       return true;
     }
@@ -761,7 +845,7 @@ export function PurcarApp() {
         : { window_started_at: startedFallback, tokens_used: 0 };
 
     if (currentWindow.tokens_used + tokenCount > tokenLimit) {
-      setSyncStatus(`${tokenLimit} token limit / 6 hours`);
+      setSyncStatus(`${tokenLimit.toLocaleString()} token weekly limit reached`);
       setTokenUsage(
         normalizeTokenWindow({
           windowStartedAt: currentWindow.window_started_at,
@@ -776,12 +860,16 @@ export function PurcarApp() {
       tokensUsed: currentWindow.tokens_used + tokenCount,
     };
 
-    await supabase.from("token_usage_windows").upsert({
+    const { error: usageError } = await supabase.from("token_usage_windows").upsert({
       user_id: userId,
       window_started_at: nextUsage.windowStartedAt,
       tokens_used: nextUsage.tokensUsed,
       updated_at: startedFallback,
     });
+    if (usageError) {
+      setSyncStatus(friendlySchemaStatus(usageError, "Could not save token usage."));
+      return false;
+    }
     setTokenUsage(nextUsage);
     return true;
   }
@@ -813,7 +901,7 @@ export function PurcarApp() {
     setSessions((current) => upsertSession(current, updatedSession));
     setEditingSessionId("");
     setEditingTitle("");
-    await syncSessionToCloud(updatedSession);
+    queueSessionSync(updatedSession);
   }
 
   async function deleteChat(sessionId: string) {
@@ -873,10 +961,10 @@ export function PurcarApp() {
     setSessions((current) => upsertSession(current, sessionWithUserMessage));
     setActiveId(sessionWithUserMessage.id);
     setInput("");
-    void syncSessionToCloud(sessionWithUserMessage);
+    queueSessionSync(sessionWithUserMessage);
 
     const modelPrompt =
-      isAdmin && memoryEnabled
+      memoryEnabled
         ? formatChatMemory(session.messages, trimmed, memoryCount)
         : trimmed;
     const reply = await generatePurcarReply(modelPrompt, { creativity, temperature });
@@ -894,7 +982,7 @@ export function PurcarApp() {
 
     setSessions((current) => upsertSession(current, updatedSession));
     setActiveId(updatedSession.id);
-    void syncSessionToCloud(updatedSession);
+    queueSessionSync(updatedSession);
   }
 
   async function submitAuth(event: FormEvent<HTMLFormElement>) {
@@ -913,6 +1001,7 @@ export function PurcarApp() {
         role: "student",
         plan: "elite",
         creativity: localCreativity,
+        email_verified: true,
       });
       setSessions([]);
       setActiveId(undefined);
@@ -944,6 +1033,7 @@ export function PurcarApp() {
               data: {
                 display_name: authName.trim() || username,
                 username,
+                purcar_email_verified: false,
               },
             },
           });
@@ -966,8 +1056,10 @@ export function PurcarApp() {
     setAuthPassword("");
     setSyncStatus(
       authMode === "signup"
-        ? "Cont creat. Verifica emailul pentru confirmare."
-        : "Cloud sync activ",
+        ? result.data.session
+          ? "Account created. You are signed in."
+          : "Account created. Email verification is optional but unlocks 50,000 extra weekly tokens."
+        : "Cloud sync active",
     );
   }
 
@@ -984,7 +1076,28 @@ export function PurcarApp() {
       options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
     });
 
-    setAuthError(error ? friendlyAuthError(error) : "Magic link trimis pe email.");
+    setAuthError(error ? friendlyAuthError(error) : "Magic link sent by email.");
+  }
+
+  async function sendVerificationLink() {
+    setSyncStatus("");
+    const email = profile?.email?.trim();
+    if (!supabase || !email) {
+      setSyncStatus("A valid account email is required.");
+      return;
+    }
+
+    const { error } = await supabase.auth.signInWithOtp({
+      email,
+      options: {
+        emailRedirectTo: `${window.location.origin}/auth/callback?next=verify-email`,
+        shouldCreateUser: false,
+      },
+    });
+
+    setSyncStatus(
+      error ? friendlyAuthError(error) : "Verification link sent by email.",
+    );
   }
 
   async function sendPasswordReset(targetEmail = authEmail) {
@@ -999,15 +1112,18 @@ export function PurcarApp() {
       redirectTo: `${window.location.origin}/auth/callback?next=reset-password`,
     });
 
-    setAuthError(error ? friendlyAuthError(error) : "Link de resetare trimis pe email.");
+    setAuthError(error ? friendlyAuthError(error) : "Password reset link sent by email.");
   }
 
   async function signOut() {
     await supabase?.auth.signOut();
+    const guestSessions = loadLocalSessions(null);
     setUserId(null);
     setProfile(null);
-    setSessions([]);
-    setActiveId(undefined);
+    setSessions(guestSessions);
+    setActiveId(guestSessions[0]?.id);
+    setTokenUsage(loadLocalTokenUsage(null));
+    setCloudSaveState("local");
     setSettingsOpen(false);
     setSyncStatus("Sign in for saved chats");
   }
@@ -1140,7 +1256,7 @@ export function PurcarApp() {
       <aside className="zai-sidebar">
         <a className="zai-sidebar__brand" href="/">
           PURCAR
-          <span>TalIA Beta</span>
+          <span>Thanatos 0.1</span>
         </a>
         <button
           className="zai-sidebar-toggle"
@@ -1163,7 +1279,7 @@ export function PurcarApp() {
           {!isAuthenticated && (
             <div className="zai-chat-empty">
               <UserCircle size={18} />
-              <span>Guest chat. Sign in to keep it after refresh.</span>
+              <span>Guest chats stay on this device. Sign in to sync them.</span>
             </div>
           )}
           {isAuthenticated && !sessions.length && (
@@ -1224,15 +1340,17 @@ export function PurcarApp() {
         <header className="zai-header zai-header--workspace">
           <div className="zai-model-switcher">
             <button className="zai-model" type="button">
-              PURCAR (TalIA Beta)
+              PURCAR Thanatos 0.1
               <ChevronDown size={15} />
             </button>
             <div className="zai-model-menu">
-              <button type="button">Local fallback now. Hugging Face model coming soon.</button>
+              <button type="button">
+                <strong>Thanatos 0.1</strong>
+                <span>The newest model</span>
+              </button>
             </div>
           </div>
           <div className="zai-header__links">
-            <a href="/education/powerpoint">Slides -&gt;</a>
             <a href="/support">Support -&gt;</a>
             {isAdmin && <span className="zai-sync-pill">{syncStatus}</span>}
             {profile ? (
@@ -1246,10 +1364,15 @@ export function PurcarApp() {
                 </button>
               </>
             ) : (
-              <button onClick={() => setAuthOpen(true)} type="button">
-                <LogIn size={15} />
-                Sign in
-              </button>
+              <>
+                <button onClick={openSettings} type="button" title="Chat settings">
+                  <Settings2 size={15} />
+                </button>
+                <button onClick={() => setAuthOpen(true)} type="button">
+                  <LogIn size={15} />
+                  Sign in
+                </button>
+              </>
             )}
           </div>
         </header>
@@ -1261,7 +1384,7 @@ export function PurcarApp() {
               <p>
                 {isAuthenticated
                   ? "Start a chat and explore education, research, and AI."
-                  : "You can test the chat without an account. History is saved only after sign in."}
+                  : "Chat freely without an account. History stays on this device until you sign in."}
               </p>
               {!isAuthenticated && (
                 <button className="zai-primary-action zai-auth-gate" onClick={() => setAuthOpen(true)} type="button">
@@ -1311,9 +1434,9 @@ export function PurcarApp() {
                 <span>{Number.isFinite(tokensLeft) ? Math.ceil(tokensLeft / 1000) : "inf"}</span>
                 <small>{Number.isFinite(tokensLeft) ? `${tokensLeft} tokens left` : "Unlimited tokens"}</small>
               </div>
-              <div className="zai-save-state" title={isAuthenticated ? "Chats save automatically" : "Sign in to save chats"}>
+              <div className={`zai-save-state zai-save-state--${cloudSaveState}`} title={syncStatus}>
                 <Save size={15} />
-                <span>{isAuthenticated ? "Auto-save on" : "Sign in to save"}</span>
+                <span>{saveStateLabel}</span>
               </div>
               <button
                 disabled={!input.trim()}
@@ -1360,7 +1483,7 @@ export function PurcarApp() {
                   <input
                     value={authUsername}
                     onChange={(event) => setAuthUsername(event.target.value)}
-                    placeholder="rus_vlad"
+                    placeholder="your_username"
                     required
                   />
                 </label>
@@ -1418,59 +1541,92 @@ export function PurcarApp() {
         <div className="zai-modal" role="dialog" aria-modal="true">
           <section className="zai-auth-card zai-settings-card">
             <header>
-              <strong>Account settings</strong>
+              <strong>{profile ? "Account settings" : "Chat settings"}</strong>
               <button onClick={() => setSettingsOpen(false)} type="button">
                 x
               </button>
             </header>
-            <div className="zai-account-row">
-              <span className="zai-avatar">{avatarText}</span>
-              <div>
-                <strong>{profile?.display_name || "Student"}</strong>
-                <span>
-                  {profile?.username ? `@${profile.username}` : "missing username"} |{" "}
-                  {profile?.email || "local account"} | plan {profile?.plan || "free"}
-                </span>
+            {profile && (
+              <div className="zai-account-row">
+                <span className="zai-avatar">{avatarText}</span>
+                <div>
+                  <strong>{profile.display_name || "Student"}</strong>
+                  <span>
+                    {profile.username ? `@${profile.username}` : "missing username"} |{" "}
+                    {profile.email || "local account"} | plan {profile.plan || "free"}
+                  </span>
+                </div>
               </div>
-            </div>
+            )}
             {isAdmin && (
               <div className="zai-admin-badge">
                 <ShieldCheck size={16} />
                 Admin: you can edit the presentation and reply to support.
               </div>
             )}
-            <label>
-              Display name
-              <input
-                value={settingsName}
-                onChange={(event) => setSettingsName(event.target.value)}
-                placeholder="Your name"
-              />
-            </label>
-            <label>
-              Username
-              <input
-                value={settingsUsername}
-                onChange={(event) => setSettingsUsername(event.target.value)}
-                placeholder="username"
-              />
-            </label>
-            <button className="zai-primary-action" onClick={saveProfileSettings} type="button">
-              Save profile
-            </button>
-            <div className="zai-auth-secondary">
-              <button onClick={() => void sendMagicLink(profile?.email || "")} type="button">
-                Magic link
-              </button>
-              <button onClick={() => void sendPasswordReset(profile?.email || "")} type="button">
-                Reset password
-              </button>
-            </div>
-            <button className="zai-secondary-action" onClick={() => setPasswordOpen(true)} type="button">
-              Change password
-            </button>
+            {profile && (
+              <div
+                className={[
+                  "zai-verification-badge",
+                  profile.email_verified ? "is-verified" : "is-unverified",
+                ].join(" ")}
+              >
+                {profile.email_verified ? <ShieldCheck size={16} /> : <AlertTriangle size={16} />}
+                <div>
+                  <strong>{profile.email_verified ? "Verified account" : "Not verified"}</strong>
+                  <span>
+                    {profile.email_verified
+                      ? "150,000 tokens per week"
+                      : "100,000 tokens per week. Verify email for 50,000 more."}
+                  </span>
+                </div>
+                {!profile.email_verified && (
+                  <button
+                    className="zai-inline-verify"
+                    onClick={() => void sendVerificationLink()}
+                    type="button"
+                  >
+                    Verify email
+                  </button>
+                )}
+              </div>
+            )}
+            {profile && (
+              <>
+                <label>
+                  Display name
+                  <input
+                    value={settingsName}
+                    onChange={(event) => setSettingsName(event.target.value)}
+                    placeholder="Your name"
+                  />
+                </label>
+                <label>
+                  Username
+                  <input
+                    value={settingsUsername}
+                    onChange={(event) => setSettingsUsername(event.target.value)}
+                    placeholder="username"
+                  />
+                </label>
+                <button className="zai-primary-action" onClick={saveProfileSettings} type="button">
+                  Save profile
+                </button>
+                <div className="zai-auth-secondary">
+                  <button onClick={() => void sendMagicLink(profile.email || "")} type="button">
+                    Magic link
+                  </button>
+                  <button onClick={() => void sendPasswordReset(profile.email || "")} type="button">
+                    Reset password
+                  </button>
+                </div>
+                <button className="zai-secondary-action" onClick={() => setPasswordOpen(true)} type="button">
+                  Change password
+                </button>
+              </>
+            )}
             <label className="zai-range-label">
-              Temperature PURCAR
+              Thanatos temperature
               <span>{temperature} | allowed 0.01 - 1000</span>
               <input
                 max={1000}
@@ -1488,43 +1644,40 @@ export function PurcarApp() {
                 Above temperature 1.5, answers can get too random and should be verified.
               </p>
             )}
-            {isAdmin && (
-              <div className="zai-beta-settings">
-                <div>
-                  <strong>Beta memory</strong>
-                  <span>Admin-only context window for the current chat.</span>
-                </div>
-                <label className="zai-toggle-row">
-                  <input
-                    checked={memoryEnabled}
-                    onChange={(event) => setMemoryEnabled(event.target.checked)}
-                    type="checkbox"
-                  />
-                  Memory {memoryEnabled ? "on" : "off"}
-                </label>
-                <label className="zai-range-label">
-                  Messages to remember
-                  <span>{memoryCount} latest messages</span>
-                  <input
-                    disabled={!memoryEnabled}
-                    max={40}
-                    min={2}
-                    step={1}
-                    type="number"
-                    value={memoryCount}
-                    onChange={(event) =>
-                      setMemoryCount(
-                        Math.min(40, Math.max(2, Math.round(Number(event.target.value) || 2))),
-                      )
-                    }
-                  />
-                </label>
+            <div className="zai-beta-settings">
+              <div>
+                <strong>Conversation memory</strong>
+                <span>Include recent messages when generating the next answer.</span>
               </div>
-            )}
+              <label className="zai-toggle-row">
+                <input
+                  checked={memoryEnabled}
+                  onChange={(event) => setMemoryEnabled(event.target.checked)}
+                  type="checkbox"
+                />
+                Memory {memoryEnabled ? "on" : "off"}
+              </label>
+              <label className="zai-range-label">
+                Messages to remember
+                <span>{memoryCount} latest messages</span>
+                <input
+                  disabled={!memoryEnabled}
+                  max={200}
+                  min={1}
+                  step={1}
+                  type="number"
+                  value={memoryCount}
+                  onChange={(event) =>
+                    setMemoryCount(
+                      Math.min(200, Math.max(1, Math.round(Number(event.target.value) || 1))),
+                    )
+                  }
+                />
+              </label>
+            </div>
             <p className="zai-settings-note">
-              Guests have 5000 tokens / 6 hours. Signed-in users have 10000.
-              Admins have unlimited tokens. Chats save to Supabase when the account
-              and schema are configured.
+              Guests receive 25,000 tokens per week. Signed-in users receive 100,000,
+              verified users receive 150,000, and admins keep unlimited access.
             </p>
           </section>
         </div>

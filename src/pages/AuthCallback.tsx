@@ -13,6 +13,7 @@ export function AuthCallback() {
 
       const currentUrl = new URL(window.location.href);
       const code = currentUrl.searchParams.get("code");
+      const next = currentUrl.searchParams.get("next");
 
       if (code) {
         const { error } = await supabase.auth.exchangeCodeForSession(code);
@@ -32,15 +33,28 @@ export function AuthCallback() {
         return;
       }
 
+      if (next === "verify-email") {
+        const { error: verificationError } = await supabase.auth.updateUser({
+          data: { purcar_email_verified: true },
+        });
+        if (verificationError) {
+          setMessage(verificationError.message);
+          return;
+        }
+      }
+
       await supabase.from("app_audit_logs").insert({
         actor_id: data.session.user.id,
-        event: "auth.email_verified",
+        event: next === "verify-email" ? "auth.email_verified" : "auth.callback",
         metadata: { surface: "purcar.me" },
       });
 
-      setMessage("Successfully verified on Purcar.me");
+      setMessage(
+        next === "verify-email"
+          ? "Email verified. Your weekly quota is now 150,000 tokens."
+          : "Authentication complete.",
+      );
       window.setTimeout(() => {
-        const next = currentUrl.searchParams.get("next");
         window.location.replace(next === "reset-password" ? "/?auth=reset-password" : "/");
       }, 900);
     }

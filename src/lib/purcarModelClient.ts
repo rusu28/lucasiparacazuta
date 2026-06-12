@@ -12,9 +12,14 @@ type GenerateResponse = {
   output?: string;
 };
 
-const purcarChatApiUrl =
-  import.meta.env.VITE_PURCAR_CHAT_API_URL || "https://ihatebaselines-purcar-chat-api.hf.space/generate";
-const purcarHfModelId = import.meta.env.VITE_PURCAR_HF_MODEL_ID || "ihatebaselines/purcar";
+const primaryPurcarChatApiUrl =
+  import.meta.env.VITE_PURCAR_CHAT_API_URL ||
+  "https://ihatebaselines-purcar-chat-api.hf.space/generate";
+const legacyPurcarChatApiUrl =
+  import.meta.env.VITE_PURCAR_LEGACY_CHAT_API_URL || "";
+const purcarHfModelId =
+  import.meta.env.VITE_PURCAR_HF_MODEL_ID ||
+  "ihatebaselines/purcar-thanatos-0.1";
 
 function extractAssistantText(text: string): string {
   let cleaned = text.trim();
@@ -64,35 +69,41 @@ function normalizeGeneratedText(payload: unknown): string | null {
 }
 
 export async function generatePurcarReply(prompt: string, options: GenerateOptions = {}) {
-  if (!purcarChatApiUrl) {
+  const endpoints = [...new Set([primaryPurcarChatApiUrl, legacyPurcarChatApiUrl].filter(Boolean))];
+  if (!endpoints.length) {
     return createPurcarReply(prompt, options);
   }
 
-  try {
-    const response = await fetch(purcarChatApiUrl, {
-      body: JSON.stringify({
-        input: prompt,
-        model: purcarHfModelId,
-        temperature: options.temperature ?? 1,
-        creativity: options.creativity ?? 50,
-        max_new_tokens: 220,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
+  for (const endpoint of endpoints) {
+    try {
+      const response = await fetch(endpoint, {
+        body: JSON.stringify({
+          input: prompt,
+          model: purcarHfModelId,
+          temperature: options.temperature ?? 0.67,
+          creativity: options.creativity ?? 50,
+          max_new_tokens: 48,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
 
-    if (!response.ok) {
-      throw new Error(`PURCAR model endpoint returned ${response.status}`);
-    }
+      if (!response.ok) {
+        throw new Error(`PURCAR model endpoint returned ${response.status}`);
+      }
 
-    const generated = normalizeGeneratedText(await response.json());
-    return generated || createPurcarReply(prompt, options);
-  } catch (error) {
-    if (import.meta.env.DEV) {
-      console.warn("[PURCAR] model endpoint failed, using local fallback", error);
+      const generated = normalizeGeneratedText(await response.json());
+      if (generated) {
+        return generated;
+      }
+    } catch (error) {
+      if (import.meta.env.DEV) {
+        console.warn(`[PURCAR] endpoint failed: ${endpoint}`, error);
+      }
     }
-    return createPurcarReply(prompt, options);
   }
+
+  return createPurcarReply(prompt, options);
 }

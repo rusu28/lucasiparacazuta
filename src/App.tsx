@@ -7,7 +7,7 @@ import { SupportPage } from "./pages/SupportPage";
 export function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
 
-  if (path === "/education/powerpoint") {
+  if (path === "/archive/education/powerpoint") {
     return <EducationPowerpoint />;
   }
 

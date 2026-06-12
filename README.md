@@ -3,7 +3,7 @@
 Site React/Vite pentru doua suprafete:
 
 - `/` - PURCAR, interfata de chat tip ChatGPT/Claude, cu sesiuni Supabase, conturi, settings si istoric doar pentru utilizatori logati.
-- `/education/powerpoint` - prezentare interactiva ReformOne, Well,Edu!, TalIA, demo Taxi-v3 si mini-chat.
+- `/archive/education/powerpoint` - prezentarea ReformOne arhivata, inclusiv demo-urile RL.
 
 ## Pornire frontend
 
