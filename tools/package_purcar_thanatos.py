@@ -111,6 +111,7 @@ class ThanatosForCausalLM(PreTrainedModel):
             dropout=config.dropout,
             activation=config.activation,
             batch_first=True,
+            norm_first=True,
         )
         self.enc = nn.TransformerEncoder(layer, num_layers=config.num_layers)
         self.output = nn.Linear(config.d_model, config.vocab_size)
@@ -154,13 +155,19 @@ class ThanatosForCausalLM(PreTrainedModel):
     def generate(
         self,
         input_ids: str | torch.Tensor | None = None,
-        temperature: float = 0.67,
-        max_new_tokens: int = 220,
+        temperature: float = 1.0,
+        max_new_tokens: int = 1024,
+        repetition_penalty: float = 1.15,
         tokenizer: Any | None = None,
         **_: Any,
     ) -> str | torch.Tensor:
         if isinstance(input_ids, torch.Tensor):
-            return self._generate_ids(input_ids.to(self.device), temperature, max_new_tokens)
+            return self._generate_ids(
+                input_ids.to(self.device),
+                temperature,
+                max_new_tokens,
+                repetition_penalty,
+            )
 
         active_tokenizer = tokenizer or self.tokenizer
         if active_tokenizer is None:
@@ -174,10 +181,14 @@ class ThanatosForCausalLM(PreTrainedModel):
             dtype=torch.long,
             device=self.device,
         )
-        generated = self._generate_ids(seed, temperature, max_new_tokens)
-        new_ids = generated[0, seed.size(1) :].tolist()
+        generated = self._generate_ids(
+            seed,
+            temperature,
+            max_new_tokens,
+            repetition_penalty,
+        )
         return active_tokenizer.decode(
-            [token for token in new_ids if token != self.config.eos_token_id],
+            generated[0].tolist(),
             skip_special_tokens=True,
         )
 
@@ -186,21 +197,35 @@ class ThanatosForCausalLM(PreTrainedModel):
         input_ids: torch.Tensor,
         temperature: float,
         max_new_tokens: int,
+        repetition_penalty: float,
     ) -> torch.Tensor:
         self.eval()
-        generated = input_ids.clone()
+        context = input_ids.clone()
+        all_tokens = input_ids.clone()
         temperature = max(float(temperature), 0.01)
+        repetition_penalty = max(float(repetition_penalty), 1.0)
 
         for _ in range(int(max_new_tokens)):
-            context = generated[:, -self.config.max_len :]
-            logits = self(context).logits[:, -1, :].float() / temperature
-            probabilities = torch.softmax(logits, dim=-1)
-            next_token = torch.multinomial(probabilities, 1)
-            generated = torch.cat([generated, next_token], dim=1)
+            logits = self(context).logits[:, -1, :].float()
+            for token_id in set(all_tokens[0].tolist()):
+                if logits[0, token_id] < 0:
+                    logits[0, token_id] *= repetition_penalty
+                else:
+                    logits[0, token_id] /= repetition_penalty
+
+            logits = logits / temperature
+            top_logits, top_indices = torch.topk(logits, 50, dim=-1)
+            probabilities = torch.softmax(top_logits, dim=-1)
+            sampled_index = torch.multinomial(probabilities, 1)
+            next_token = top_indices.gather(1, sampled_index)
+
             if int(next_token[0, 0]) == self.config.eos_token_id:
                 break
 
-        return generated
+            all_tokens = torch.cat([all_tokens, next_token], dim=1)
+            context = torch.cat([context, next_token], dim=1)[:, -128:]
+
+        return all_tokens
 '''
 
 

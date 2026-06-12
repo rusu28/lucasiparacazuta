@@ -80,9 +80,10 @@ export async function generatePurcarReply(prompt: string, options: GenerateOptio
         body: JSON.stringify({
           input: prompt,
           model: purcarHfModelId,
-          temperature: options.temperature ?? 0.67,
+          temperature: options.temperature ?? 1,
           creativity: options.creativity ?? 50,
           max_new_tokens: 48,
+          repetition_penalty: 1.15,
         }),
         headers: {
           "Content-Type": "application/json",
